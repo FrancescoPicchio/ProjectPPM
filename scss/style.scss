@@ -1,5 +1,25 @@
-$background-color: green;
+$background-color: white;
+$ad-coloumn-bg-color: lightgray;
 
-body{
+body {
+    display: flex;
+}
+
+.ad-coloumn{
+    display: flex;
+    background-color: $ad-coloumn-bg-color;
+    flex: 10%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+}
+
+.main-content {
+    display: flex;
     background-color: $background-color;
+    flex: 70%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    padding: 10px;
 }

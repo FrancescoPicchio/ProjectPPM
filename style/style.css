@@ -1,5 +1,24 @@
 body {
-  background-color: green;
+  display: flex;
+}
+
+.ad-coloumn {
+  display: flex;
+  background-color: lightgray;
+  flex: 10%;
+  height: 100%;
+  margin: 0;
+  border: 0;
+}
+
+.main-content {
+  display: flex;
+  background-color: white;
+  flex: 70%;
+  height: 100%;
+  margin: 0;
+  border: 0;
+  padding: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
