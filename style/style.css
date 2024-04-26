@@ -11,6 +11,8 @@ main {
   min-height: 100vh; /*100vh means 100% of viewport height*/
 }
 
+/*NOTE: in the original site, when the windows is shrunk on a desktop, the right hand column still remains visible on the page
+ but the left one doesnt. I didn't implement this "feature"*/
 .ad-column {
   flex-grow: 1;
   margin: 0;
@@ -19,8 +21,10 @@ main {
   background-color: lightgray;
 }
 
-.main-column {
-  width: 1000px;
+/*FIXME footer-content doesn't align perfectly when the screen is almost shrunk enough to change display none to the ad-columns.
+Actually the problem seems to be that the main column is shrunk when around 820px of page width for some reason*/
+#main-column {
+  width: 800px;
   flex-grow: 0;
   margin: 0;
   border: 0;
@@ -33,10 +37,23 @@ header {
   top: 0;
   background-color: black;
   color: white;
+  font-size: 90px;
+  transition: height 0, 3s ease-in;
+}
+
+#header-director-and-update {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+#header-director-and-update p {
+  padding: 10px;
+  font-size: 15px;
 }
 
 .main-content {
   padding: 10px;
+  font-size: 25px;
 }
 
 footer {
@@ -49,12 +66,12 @@ footer {
 }
 
 .footer-content {
-  width: 1000px;
+  width: 800px;
   flex-grow: 0;
   background-color: darkslategray;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   .ad-column {
     display: none;
   }
