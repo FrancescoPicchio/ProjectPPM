@@ -46,6 +46,7 @@ header {
     transition: height 0,3s ease-in;
 }
 
+/*TODO this div doesn't display on mobile*/
 #header-director-and-update {
     display: flex;
     flex-flow: row;
@@ -56,6 +57,47 @@ header {
         font-size: 15px;
     }
 }
+
+#home-before-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    margin: 0px;
+        .daily-topics>ul, ul {
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+            justify-content: space-around;
+            list-style-type: none;
+
+            li {
+                margin: 5px;
+            }
+        }
+}
+
+.daily-topics {
+    display: flex;
+    flex-flow: row;
+}
+
+#FQExtra-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: red;
+    color: white;
+        h5{
+            margin: 0px;
+            padding: 5px;
+            a  {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }        
 
 .main-content {
     padding: 10px;
