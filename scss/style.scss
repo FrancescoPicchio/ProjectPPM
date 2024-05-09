@@ -1,12 +1,33 @@
 $background-color: white;
 $ad-coloumn-bg-color: lightgray;
-$main-width: 800px;
+$main-width: 1000px;
+$header-font-size: 12px;
 
 body {
     display: flex;
     flex-flow: column;
     justify-content: center;
     margin: 0;
+}
+
+.disclaimer {
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0px;
+    position: sticky;
+    top: 0;
+    min-width: 100%;
+    background-color: black;
+    color: white;
+    height: 20px;
+    
+    a, a:visited {
+        text-decoration: none;
+        color: blue;
+    }
 }
 
 main {
@@ -37,13 +58,60 @@ Actually the problem seems to be that the main column is shrunk when around 820p
 }
 
 header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     position: sticky;
     padding: 10px;
-    top: 0;
-    background-color: black;
+    top: 30px;
+    max-height: 160px;
+    background-color: white;
+    color: black;
+}
+
+#header-logo {
+    max-width: 40%;
+    height: auto;
+    /*FIXME make logo clip over the navbar on the upper right*/ 
+}
+
+#subscribe-box {
+    min-width: 250px;
+    font-size: 12px;
+}
+
+#subscribe-button {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background-color: #8e0000;
     color: white;
-    font-size: 90px;
-    transition: height 0,3s ease-in;
+    text-decoration: none;
+}
+
+#subscribe-button:hover {
+    background-color: #430000;
+}
+
+#navbar-links {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    font-size: 12px;
+
+    /*-n selects the items from the beginning (not semantically a minus) and +3 means up to the third child*/
+    
+    li>a {
+        padding: 2px;
+        text-decoration: none;
+        color: gray;
+    }
+    
+    &:nth-child(4)>a{
+        color: red;;
+    }
+
+    
 }
 
 /*TODO this div doesn't display on mobile*/
@@ -89,9 +157,10 @@ header {
     padding: 5px;
     background-color: red;
     color: white;
-        h5{
+        h4{
             margin: 0px;
             padding: 5px;
+            font-weight: normal;
             a  {
                 text-decoration: none;
                 color: white;
@@ -102,6 +171,7 @@ header {
 .main-content {
     padding: 10px;
     font-size: 25px;
+    font-family: tt norms medium;
 }
 
 footer {
@@ -121,7 +191,7 @@ footer {
 
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     .ad-column {
         display: none;
     }

@@ -5,6 +5,25 @@ body {
   margin: 0;
 }
 
+.disclaimer {
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 0px;
+  position: sticky;
+  top: 0;
+  min-width: 100%;
+  background-color: black;
+  color: white;
+  height: 20px;
+}
+.disclaimer a, .disclaimer a:visited {
+  text-decoration: none;
+  color: blue;
+}
+
 main {
   display: flex;
   flex-flow: row;
@@ -24,7 +43,7 @@ main {
 /*FIXME footer-content doesn't align perfectly when the screen is almost shrunk enough to change display none to the ad-columns.
 Actually the problem seems to be that the main column is shrunk when around 820px of page width for some reason*/
 #main-column {
-  width: 800px;
+  width: 1000px;
   flex-grow: 0;
   margin: 0;
   border: 0;
@@ -32,13 +51,55 @@ Actually the problem seems to be that the main column is shrunk when around 820p
 }
 
 header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   position: sticky;
   padding: 10px;
-  top: 0;
-  background-color: black;
+  top: 30px;
+  max-height: 160px;
+  background-color: white;
+  color: black;
+}
+
+#header-logo {
+  max-width: 40%;
+  height: auto;
+  /*FIXME make logo clip over the navbar on the upper right*/
+}
+
+#subscribe-box {
+  min-width: 250px;
+  font-size: 12px;
+}
+
+#subscribe-button {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  background-color: #8e0000;
   color: white;
-  font-size: 90px;
-  transition: height 0, 3s ease-in;
+  text-decoration: none;
+}
+
+#subscribe-button:hover {
+  background-color: #430000;
+}
+
+#navbar-links {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  font-size: 12px;
+  /*-n selects the items from the beginning (not semantically a minus) and +3 means up to the third child*/
+}
+#navbar-links li > a {
+  padding: 2px;
+  text-decoration: none;
+  color: gray;
+}
+#navbar-links:nth-child(4) > a {
+  color: red;
 }
 
 /*TODO this div doesn't display on mobile*/
@@ -83,11 +144,12 @@ header {
   background-color: red;
   color: white;
 }
-#FQExtra-header h5 {
+#FQExtra-header h4 {
   margin: 0px;
   padding: 5px;
+  font-weight: normal;
 }
-#FQExtra-header h5 a {
+#FQExtra-header h4 a {
   text-decoration: none;
   color: white;
 }
@@ -95,6 +157,7 @@ header {
 .main-content {
   padding: 10px;
   font-size: 25px;
+  font-family: tt norms medium;
 }
 
 footer {
@@ -107,12 +170,12 @@ footer {
 }
 
 .footer-content {
-  width: 800px;
+  width: 1000px;
   flex-grow: 0;
   background-color: darkslategray;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .ad-column {
     display: none;
   }
