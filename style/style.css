@@ -28,29 +28,27 @@ main {
   display: flex;
   flex-flow: row;
   min-height: 100vh; /*100vh means 100% of viewport height*/
+  /*NOTE: in the original site, when the windows is shrunk on a desktop, the right hand column still remains visible on the page
+  but the left one doesnt. I didn't implement this "feature"*/
+  /*FIXME footer-content doesn't align perfectly when the screen is almost shrunk enough to change display none to the ad-columns.
+  Actually the problem seems to be that the main column is shrunk when around 820px of page width for some reason*/
 }
-
-/*NOTE: in the original site, when the windows is shrunk on a desktop, the right hand column still remains visible on the page
- but the left one doesnt. I didn't implement this "feature"*/
-.ad-column {
+main .ad-column {
   flex-grow: 1;
   margin: 0;
   border: 0;
   padding: 10px;
   background-color: lightgray;
 }
-
-/*FIXME footer-content doesn't align perfectly when the screen is almost shrunk enough to change display none to the ad-columns.
-Actually the problem seems to be that the main column is shrunk when around 820px of page width for some reason*/
-#main-column {
+main #main-column {
   width: 1000px;
   flex-grow: 0;
   margin: 0;
   border: 0;
   background-color: white;
+  /*TODO this div doesn't display on mobile*/
 }
-
-header {
+main #main-column header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -61,19 +59,16 @@ header {
   background-color: white;
   color: black;
 }
-
-#header-logo {
+main #main-column header #header-logo {
   max-width: 40%;
   height: auto;
   /*FIXME make logo clip over the navbar on the upper right*/
 }
-
-#subscribe-box {
+main #main-column header #subscribe-box {
   min-width: 250px;
   font-size: 12px;
 }
-
-#subscribe-button {
+main #main-column header #subscribe-box #subscribe-button {
   display: flex;
   justify-content: center;
   padding: 5px;
@@ -81,61 +76,54 @@ header {
   color: white;
   text-decoration: none;
 }
-
-#subscribe-button:hover {
+main #main-column header #subscribe-box #subscribe-button:hover {
   background-color: #430000;
 }
-
-#navbar-links {
+main #main-column header #navbar-links {
   display: flex;
   flex-direction: row;
   list-style-type: none;
   font-size: 12px;
   /*-n selects the items from the beginning (not semantically a minus) and +3 means up to the third child*/
 }
-#navbar-links li > a {
+main #main-column header #navbar-links li > a {
   padding: 2px;
   text-decoration: none;
   color: gray;
 }
-#navbar-links:nth-child(4) > a {
+main #main-column header #navbar-links:nth-child(4) > a {
   color: red;
 }
-
-/*TODO this div doesn't display on mobile*/
-#header-director-and-update {
+main #main-column #header-director-and-update {
   display: flex;
   flex-flow: row;
   justify-content: space-between;
 }
-#header-director-and-update p {
+main #main-column #header-director-and-update p {
   padding: 10px;
   font-size: 15px;
 }
-
-#home-before-content {
+main #main-column #home-before-content {
   display: flex;
   justify-content: space-between;
   padding: 5px;
   margin: 0px;
 }
-#home-before-content .daily-topics > ul, #home-before-content ul {
+main #main-column #home-before-content .daily-topics > ul, main #main-column #home-before-content ul {
   display: flex;
   flex-flow: row;
   align-items: center;
   justify-content: space-around;
   list-style-type: none;
 }
-#home-before-content .daily-topics > ul li, #home-before-content ul li {
+main #main-column #home-before-content .daily-topics > ul li, main #main-column #home-before-content ul li {
   margin: 5px;
 }
-
-.daily-topics {
+main #main-column .daily-topics {
   display: flex;
   flex-flow: row;
 }
-
-#FQExtra-header {
+main #main-column #FQExtra-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -144,17 +132,16 @@ header {
   background-color: red;
   color: white;
 }
-#FQExtra-header h4 {
+main #main-column #FQExtra-header h4 {
   margin: 0px;
   padding: 5px;
   font-weight: normal;
 }
-#FQExtra-header h4 a {
+main #main-column #FQExtra-header h4 a {
   text-decoration: none;
   color: white;
 }
-
-.main-content {
+main #main-column .main-content {
   padding: 10px;
   font-size: 25px;
   font-family: tt norms medium;
@@ -168,8 +155,7 @@ footer {
   background-color: black;
   color: white;
 }
-
-.footer-content {
+footer .footer-content {
   width: 1000px;
   flex-grow: 0;
   background-color: darkslategray;

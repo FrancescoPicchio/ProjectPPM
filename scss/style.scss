@@ -1,7 +1,7 @@
 $background-color: white;
 $ad-coloumn-bg-color: lightgray;
 $main-width: 1000px;
-$header-font-size: 12px;
+$small-font-size: 12px;
 
 body {
     display: flex;
@@ -34,146 +34,149 @@ main {
     display: flex;
     flex-flow: row;
     min-height: 100vh; /*100vh means 100% of viewport height*/
-}
 
 
-/*NOTE: in the original site, when the windows is shrunk on a desktop, the right hand column still remains visible on the page
- but the left one doesnt. I didn't implement this "feature"*/
-.ad-column{
-    flex-grow: 1;
-    margin: 0;
-    border: 0;
-    padding: 10px;
-    background-color: $ad-coloumn-bg-color;
-}
 
-/*FIXME footer-content doesn't align perfectly when the screen is almost shrunk enough to change display none to the ad-columns.
-Actually the problem seems to be that the main column is shrunk when around 820px of page width for some reason*/
-#main-column {
-    width: $main-width;
-    flex-grow: 0;
-    margin: 0;
-    border: 0;
-    background-color: $background-color;
-}
-
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: sticky;
-    padding: 10px;
-    top: 30px;
-    max-height: 160px;
-    background-color: white;
-    color: black;
-}
-
-#header-logo {
-    max-width: 40%;
-    height: auto;
-    /*FIXME make logo clip over the navbar on the upper right*/ 
-}
-
-#subscribe-box {
-    min-width: 250px;
-    font-size: 12px;
-}
-
-#subscribe-button {
-    display: flex;
-    justify-content: center;
-    padding: 5px;
-    background-color: #8e0000;
-    color: white;
-    text-decoration: none;
-}
-
-#subscribe-button:hover {
-    background-color: #430000;
-}
-
-#navbar-links {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    font-size: 12px;
-
-    /*-n selects the items from the beginning (not semantically a minus) and +3 means up to the third child*/
-    
-    li>a {
-        padding: 2px;
-        text-decoration: none;
-        color: gray;
-    }
-    
-    &:nth-child(4)>a{
-        color: red;;
-    }
-
-    
-}
-
-/*TODO this div doesn't display on mobile*/
-#header-director-and-update {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-
-    p {
+    /*NOTE: in the original site, when the windows is shrunk on a desktop, the right hand column still remains visible on the page
+    but the left one doesnt. I didn't implement this "feature"*/
+    .ad-column{
+        flex-grow: 1;
+        margin: 0;
+        border: 0;
         padding: 10px;
-        font-size: 15px;
+        background-color: $ad-coloumn-bg-color;
     }
-}
 
-#home-before-content {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-    margin: 0px;
-        .daily-topics>ul, ul {
+    /*FIXME footer-content doesn't align perfectly when the screen is almost shrunk enough to change display none to the ad-columns.
+    Actually the problem seems to be that the main column is shrunk when around 820px of page width for some reason*/
+    #main-column {
+        width: $main-width;
+        flex-grow: 0;
+        margin: 0;
+        border: 0;
+        background-color: $background-color;
+    
+
+        header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            position: sticky;
+            padding: 10px;
+            top: 30px;
+            max-height: 160px;
+            background-color: white;
+            color: black;
+        
+
+            #header-logo {
+                max-width: 40%;
+                height: auto;
+                /*FIXME make logo clip over the navbar on the upper right*/ 
+            }
+
+            #subscribe-box {
+                min-width: 250px;
+                font-size: 12px;
+            
+
+                #subscribe-button {
+                    display: flex;
+                    justify-content: center;
+                    padding: 5px;
+                    background-color: #8e0000;
+                    color: white;
+                    text-decoration: none;
+                }
+
+                #subscribe-button:hover {
+                    background-color: #430000;
+                }
+            }
+
+            #navbar-links {
+                display: flex;
+                flex-direction: row;
+                list-style-type: none;
+                font-size: 12px;
+
+                /*-n selects the items from the beginning (not semantically a minus) and +3 means up to the third child*/
+                
+                li>a {
+                    padding: 2px;
+                    text-decoration: none;
+                    color: gray;
+                }
+                
+                &:nth-child(4)>a{
+                    color: red;;
+                }
+
+                
+            }
+        }
+
+        /*TODO this div doesn't display on mobile*/
+        #header-director-and-update {
             display: flex;
             flex-flow: row;
-            align-items: center;
-            justify-content: space-around;
-            list-style-type: none;
+            justify-content: space-between;
 
-            li {
-                margin: 5px;
+            p {
+                padding: 10px;
+                font-size: 15px;
             }
         }
-}
 
-.daily-topics {
-    display: flex;
-    flex-flow: row;
-}
-
-#FQExtra-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    border-radius: 15px;
-    padding: 5px;
-    background-color: red;
-    color: white;
-        h4{
-            margin: 0px;
+        #home-before-content {
+            display: flex;
+            justify-content: space-between;
             padding: 5px;
-            font-weight: normal;
-            a  {
-                text-decoration: none;
-                color: white;
-            }
+            margin: 0px;
+                .daily-topics>ul, ul {
+                    display: flex;
+                    flex-flow: row;
+                    align-items: center;
+                    justify-content: space-around;
+                    list-style-type: none;
+
+                    li {
+                        margin: 5px;
+                    }
+                }
         }
-    }        
 
-.main-content {
-    padding: 10px;
-    font-size: 25px;
-    font-family: tt norms medium;
+        .daily-topics {
+            display: flex;
+            flex-flow: row;
+        }
+
+        #FQExtra-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-radius: 15px;
+            padding: 5px;
+            background-color: red;
+            color: white;
+                h4{
+                    margin: 0px;
+                    padding: 5px;
+                    font-weight: normal;
+                    a  {
+                        text-decoration: none;
+                        color: white;
+                    }
+                }
+            }        
+
+        .main-content {
+            padding: 10px;
+            font-size: 25px;
+            font-family: tt norms medium;
+        }
+    }
 }
-
 footer {
     display: flex;
     justify-content: center;
@@ -181,14 +184,13 @@ footer {
     bottom: 0;
     background-color: black;
     color: white;
-}
 
-.footer-content {
-    width: $main-width;
-    flex-grow: 0;
-    background-color: darkslategray;
+    .footer-content {
+        width: $main-width;
+        flex-grow: 0;
+        background-color: darkslategray;
+    }
 }
-
 
 
 @media screen and (max-width: 1000px) {
