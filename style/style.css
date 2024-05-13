@@ -48,6 +48,7 @@ main #main-column {
   flex-grow: 0;
   margin: 0;
   border: 0;
+  padding: 15px;
   background-color: white;
   /*TODO this div doesn't display on mobile*/
 }
@@ -56,13 +57,16 @@ main #main-column header {
   flex-direction: row;
   justify-content: space-between;
   position: sticky;
-  padding: 10px;
   top: 30px;
   max-height: 160px;
+  width: 1050px;
   background-color: white;
   color: black;
 }
 main #main-column header #subscribe-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 30%;
   font-size: 12px;
 }
@@ -92,10 +96,12 @@ main #main-column header #logo-link #header-logo {
   max-height: 100%;
   height: auto;
   display: block;
+  padding: 5px;
 }
 main #main-column header #navbar-links {
   display: flex;
   flex-direction: row;
+  align-items: center;
   list-style-type: none;
   font-size: 12px;
   width: 30%;
@@ -136,6 +142,13 @@ main #main-column #home-before-content .daily-topics > ul, main #main-column #ho
 }
 main #main-column #home-before-content .daily-topics > ul li, main #main-column #home-before-content ul li {
   margin: 5px;
+}
+main #main-column #home-before-content .daily-topics > ul li a, main #main-column #home-before-content ul li a {
+  color: black;
+  text-decoration: none;
+}
+main #main-column #home-before-content .daily-topics > ul li a:hover, main #main-column #home-before-content ul li a:hover {
+  text-decoration: underline;
 }
 main #main-column .daily-topics {
   display: flex;

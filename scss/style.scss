@@ -56,6 +56,7 @@ main {
         flex-grow: 0;
         margin: 0;
         border: 0;
+        padding: 15px;
         background-color: $background-color;
     
         header {
@@ -63,15 +64,19 @@ main {
             flex-direction: row;
             justify-content: space-between;
             position: sticky;
-            padding: 10px;
+            //FIXME there is literally one pixel too much when the page scrolls down
             top: 30px;
             max-height: 160px;
+            width: $main-width;
             background-color: white;
             color: black;
         
             
 
             #subscribe-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
                 width: 30%;
                 font-size: 12px;
 
@@ -104,12 +109,14 @@ main {
                     max-height: 100%;
                     height: auto;
                     display: block;
+                    padding: 5px;
                 }
             }
 
             #navbar-links {
                 display: flex;
                 flex-direction: row;
+                align-items: center;
                 list-style-type: none;
                 font-size: 12px;
                 width: 30%;
@@ -157,6 +164,15 @@ main {
 
                     li {
                         margin: 5px;
+                        
+                        a {
+                            color: black;
+                            text-decoration: none;
+                        }
+
+                        a:hover {
+                            text-decoration: underline;
+                        }
                     }
                 }
         }
