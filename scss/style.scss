@@ -3,12 +3,14 @@ $ad-coloumn-bg-color: lightgray;
 $main-width: 1050px;
 $small-font-size: 12px;
 
+
 body {
     display: flex;
     flex-flow: column;
     justify-content: center;
     margin: 0;
     font-weight: 200;
+    overflow: auto;
 }
 
 .disclaimer {
@@ -126,8 +128,6 @@ main {
                         }
                 }
             }
-
-            
         }
 
         /*TODO this div doesn't display on mobile*/
@@ -174,10 +174,12 @@ main {
             padding: 5px;
             background-color: red;
             color: white;
+
                 h4{
                     margin: 0px;
                     padding: 5px;
                     font-weight: normal;
+
                     a  {
                         text-decoration: none;
                         color: white;
@@ -196,6 +198,10 @@ main {
         display: none;
         background-color: black;
         width: $main-width;
+        max-height: 100vh;
+        padding: 10px;
+        overflow-y: auto;
+        color: white;
 
         #menu-header {
             display: flex;
@@ -205,6 +211,44 @@ main {
                 //filter is used to change the color of the svg image
                 filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(317deg) brightness(105%) contrast(104%);
                 padding: 10px;
+            }
+
+            #close-menu-icon:hover {
+                cursor: pointer;
+            }
+        }
+        #home-link-menu {
+            text-decoration: none;
+            color: white;
+            padding-left: 15px;
+        }
+        #menu-panel-col-wrapper {
+            display: flex;
+            flex-direction: row;
+            column-gap: 100px;
+
+            .menu-panel-col {
+                list-style-type: none;
+                padding-left: 15px;
+
+                li {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+
+                    a {
+                        text-decoration: none;
+                        color: white;
+                    }
+
+                    .menu-topic {
+                        //color taken directly from inspect element
+                        color: hsla(0,0%,100%,.7);
+                    }
+                    
+                    .menu-topic:hover {
+                        color: hsla(0, 0%, 100%, 0.4);
+                    }
+                }
             }
         }
     }

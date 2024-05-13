@@ -4,6 +4,7 @@ body {
   justify-content: center;
   margin: 0;
   font-weight: 200;
+  overflow: auto;
 }
 
 .disclaimer {
@@ -167,6 +168,10 @@ main #menu-panel {
   display: none;
   background-color: black;
   width: 1050px;
+  max-height: 100vh;
+  padding: 10px;
+  overflow-y: auto;
+  color: white;
 }
 main #menu-panel #menu-header {
   display: flex;
@@ -175,6 +180,37 @@ main #menu-panel #menu-header {
 main #menu-panel #menu-header #close-menu-icon {
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(317deg) brightness(105%) contrast(104%);
   padding: 10px;
+}
+main #menu-panel #menu-header #close-menu-icon:hover {
+  cursor: pointer;
+}
+main #menu-panel #home-link-menu {
+  text-decoration: none;
+  color: white;
+  padding-left: 15px;
+}
+main #menu-panel #menu-panel-col-wrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 100px;
+}
+main #menu-panel #menu-panel-col-wrapper .menu-panel-col {
+  list-style-type: none;
+  padding-left: 15px;
+}
+main #menu-panel #menu-panel-col-wrapper .menu-panel-col li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+main #menu-panel #menu-panel-col-wrapper .menu-panel-col li a {
+  text-decoration: none;
+  color: white;
+}
+main #menu-panel #menu-panel-col-wrapper .menu-panel-col li .menu-topic {
+  color: hsla(0, 0%, 100%, 0.7);
+}
+main #menu-panel #menu-panel-col-wrapper .menu-panel-col li .menu-topic:hover {
+  color: hsla(0, 0%, 100%, 0.4);
 }
 
 footer {
