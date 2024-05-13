@@ -1,6 +1,6 @@
 $background-color: white;
 $ad-coloumn-bg-color: lightgray;
-$main-width: 1000px;
+$main-width: 1050px;
 $small-font-size: 12px;
 
 body {
@@ -8,11 +8,13 @@ body {
     flex-flow: column;
     justify-content: center;
     margin: 0;
+    font-weight: 200;
 }
 
 .disclaimer {
     display: flex;
     justify-content: center;
+    flex-grow: 1;
     padding: 0px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -20,10 +22,10 @@ body {
     position: sticky;
     top: 0;
     min-width: 100%;
+    height: 20px;
     background-color: black;
     color: white;
-    height: 20px;
-    
+
     a, a:visited {
         text-decoration: none;
         color: blue;
@@ -34,8 +36,6 @@ main {
     display: flex;
     flex-flow: row;
     min-height: 100vh; /*100vh means 100% of viewport height*/
-
-
 
     /*NOTE: in the original site, when the windows is shrunk on a desktop, the right hand column still remains visible on the page
     but the left one doesnt. I didn't implement this "feature"*/
@@ -56,11 +56,10 @@ main {
         border: 0;
         background-color: $background-color;
     
-
         header {
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: space-between;
             position: sticky;
             padding: 10px;
             top: 30px;
@@ -68,29 +67,41 @@ main {
             background-color: white;
             color: black;
         
-
-            #header-logo {
-                max-width: 40%;
-                height: auto;
-                /*FIXME make logo clip over the navbar on the upper right*/ 
-            }
+            
 
             #subscribe-box {
-                min-width: 250px;
+                width: 30%;
                 font-size: 12px;
-            
 
                 #subscribe-button {
                     display: flex;
                     justify-content: center;
-                    padding: 5px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    padding-right: 25px;
+                    padding-left: 25px;
                     background-color: #8e0000;
                     color: white;
                     text-decoration: none;
                 }
 
                 #subscribe-button:hover {
-                    background-color: #430000;
+                    background-color: #5c0000;
+                }
+            }
+
+            #logo-link {
+                display: flex;
+                justify-content: flex-end;
+                max-width: 35%;
+                height: auto;
+                padding-left: 10px;
+                padding-right: 10px;
+            
+                #header-logo {
+                    max-height: 100%;
+                    height: auto;
+                    display: block;
                 }
             }
 
@@ -99,21 +110,24 @@ main {
                 flex-direction: row;
                 list-style-type: none;
                 font-size: 12px;
+                width: 30%;
+                margin: 0px;
+                padding: 0px;
 
-                /*-n selects the items from the beginning (not semantically a minus) and +3 means up to the third child*/
-                
-                li>a {
-                    padding: 2px;
-                    text-decoration: none;
-                    color: gray;
-                }
-                
-                &:nth-child(4)>a{
-                    color: red;;
-                }
+                    li {
+                        padding: 10px;
 
-                
+                        a {
+                            text-decoration: none;
+                            color: gray;
+                    }
+                        #open-menu-button:hover {
+                            cursor: pointer;
+                        }
+                }
             }
+
+            
         }
 
         /*TODO this div doesn't display on mobile*/
@@ -133,6 +147,7 @@ main {
             justify-content: space-between;
             padding: 5px;
             margin: 0px;
+
                 .daily-topics>ul, ul {
                     display: flex;
                     flex-flow: row;
@@ -176,6 +191,23 @@ main {
             font-family: tt norms medium;
         }
     }
+
+    #menu-panel {
+        display: none;
+        background-color: black;
+        width: $main-width;
+
+        #menu-header {
+            display: flex;
+            justify-content: flex-end;
+
+            #close-menu-icon {
+                //filter is used to change the color of the svg image
+                filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(317deg) brightness(105%) contrast(104%);
+                padding: 10px;
+            }
+        }
+    }
 }
 footer {
     display: flex;
@@ -187,17 +219,17 @@ footer {
 
     .footer-content {
         width: $main-width;
-        flex-grow: 0;
+        
         background-color: darkslategray;
     }
 }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
     .ad-column {
         display: none;
     }
-    .main-column, .footer-content {
-        min-width: 100%;
+    #main-column, .footer-content, #menu-panel {
+        max-width: 100%;
     }
 }

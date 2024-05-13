@@ -2,11 +2,10 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Il Fatto Quotidiano - News su politica, cronaca, giustizia ed economia</title>
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.svg">
     <link rel="stylesheet" href="./style/style.css">
-    <script src="scripts/headerShrink.js"></script>
+    <link rel="icon" href="assets/favicon16.ico" type="image/x-icon">
 </head>
 <body>
     <div class="disclaimer">
@@ -27,16 +26,19 @@
                     </a>
                 </div>
                 <!--FIXME header img doesn't scale correctly-->
-                <a href="">
-                <img id="header-logo" src="assets/logo_fq.svg" alt="logo di Il Fatto Quotidiano">
+                <a id="logo-link" href="">
+                    <img id="header-logo" src="assets/fatto quotidiano it.png" alt="logo di Il Fatto Quotidiano">
                 </a>
                 <div id="navbar-box">
                     <ul id="navbar-links">
                         <li><a href ="https://www.fondazioneilfattoquotidiano.org">Fondazione FQ</a></li>
                         <li><a target=”_blank” href ="https://www.scuoladelfatto.it/home">Scuola del Fatto</a></li>
                         <li><a target=”_blank” href ="https://community.ilfattoquotidiano.it/?_gl=1%2A1f37133%2A_ga%2AMTAxMjI4Nzc5Ny4xNzEzODY0ODgw%2A_ga_NFF0RV6Y1Z%2AMTcxNDk5MTU2My4xMi4xLjE3MTQ5OTQzMDEuMzQuMC4w">Community</a></li>
-                        <li><a href ="https://www.ilfattoquotidiano.it/abbonati/">Abbonati</a></li>
-                        <li><a target=”_blank” href ="https://shop.ilfattoquotidiano.it/login/">Accedi</a></li>
+                        <!--had problem with child selector in scss so I did inline style as a workaround-->
+                        <li><a style="color: #8e0000" href ="https://www.ilfattoquotidiano.it/abbonati/">Abbonati</a></li>
+                        <li><a style="color: black" target=”_blank” href ="https://shop.ilfattoquotidiano.it/login/">Accedi</a></li>
+                        <li><a><img src="assets/search.svg" alt="link per barra di ricerca"></a></li>
+                        <li><img id="open-menu-button" src="assets/menu-scale.svg" alt="menù"></li>
                     </ul>
                     <div id="navbar">
 
@@ -61,10 +63,14 @@
                     </ul>
                 </div>
                 <ul class="social-links">
-                    <li>fb</li>
-                    <li>twt</li>
-                    <li>insta</li>
-                    <li>teleg</li>
+                    <li><a target="_blank" href="https://www.facebook.com/ilFattoQuotidiano">
+                        <img src="assets/facebook-tag.svg" alt="link per facebook"></a></li>
+                    <li><a target="_blank" href="https://twitter.com/FattoQuotidiano">
+                        <img src="assets/twitter.svg" alt="link per x (formalmente conosciuto come twitter)"></a></li>
+                    <li><a target="_blank" href="https://www.instagram.com/ilfattoquotidianoit/">
+                        <img src="assets/instagram.svg" alt="link per instagram"></a></li>
+                    <li><a target="_blank" href="https://shop.ilfattoquotidiano.it/newsletter/?_gl=1*smxwdj*_ga*MTc2NDE5MzM4Ny4xNzE0MjIzMzAy*_ga_NFF0RV6Y1Z*MTcxNTU4OTA1NC43LjEuMTcxNTU4OTc3NC41OS4wLjA.">
+                        <img src="assets/telegram.svg" alt="link per telegram"></a></li>
                 </ul>
             </div>
             <div class="main-content">
@@ -91,6 +97,11 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis sit officiis consectetur dicta adipisci illum dolore quia similique placeat doloremque culpa repellendus dolorum rem porro quibusdam autem mollitia, vitae distinctio perferendis dolores cumque. Iusto modi pariatur repellendus! Perferendis nostrum saepe voluptatibus. Dignissimos tempore corporis dolorum blanditiis placeat quam quod assumenda, ut officia explicabo rem obcaecati, tenetur excepturi magnam, optio fugit iusto aliquid! Autem aspernatur quam eveniet aliquid rem harum suscipit sunt vel ad. Illo dicta totam corporis. Laboriosam hic numquam explicabo aspernatur soluta repellendus ex ab quisquam, vel modi eveniet debitis. Unde, eos. Praesentium aut a iure explicabo. Id amet sit ducimus similique voluptas quod illo obcaecati iure laborum iusto veniam animi sunt odit tenetur nobis ipsa excepturi impedit sequi ex, quo sapiente? Ad sed quibusdam quisquam libero maxime adipisci explicabo. Magnam, deleniti temporibus ab laudantium nesciunt repellat ad ducimus, natus, officiis dicta necessitatibus laboriosam? Enim, saepe labore. Exercitationem, nihil. Expedita quia qui hic! Cupiditate ipsam voluptas rerum beatae minus, nostrum eaque eum numquam cumque hic quis quaerat reprehenderit repellendus, qui vitae. Mollitia nemo deserunt excepturi est placeat consectetur fugiat aut maxime aliquam vitae provident quis explicabo fuga eum, fugit, reiciendis asperiores quaerat officiis rem earum. Eveniet, consequuntur, ad hic nihil unde, eum fuga temporibus harum libero distinctio in quibusdam nulla ipsam quaerat cupiditate doloribus veritatis ratione excepturi accusamus error illum itaque optio inventore. Ipsa, voluptates. Fuga sed fugit facere minima tenetur officia distinctio praesentium perferendis consequatur, vero, quis rem nihil neque modi repellat vel sapiente quaerat obcaecati maiores ab! Eum distinctio quos provident id suscipit, similique iusto ut itaque rerum, possimus eligendi, omnis nesciunt doloribus commodi? Eveniet at a quisquam ab error iste doloribus natus recusandae voluptas, vel facere similique laborum nam, facilis expedita tempore dicta. Distinctio nostrum cum harum natus consequatur alias nam culpa tempore enim error, quos magni asperiores debitis velit iusto accusantium excepturi esse. Quos dolorum adipisci facere velit hic delectus vitae consequuntur atque numquam optio ea assumenda, molestias quod voluptatum temporibus quasi ipsa libero. Recusandae laudantium in excepturi, possimus non quidem facere. Maxime quisquam impedit necessitatibus officia similique quae, dolore voluptas expedita autem dicta quia sunt, itaque iusto amet veniam iste vitae? Dolorum libero magnam nostrum eum ab neque cupiditate non quibusdam, quos vero quae totam sit. Asperiores vitae voluptates magnam? Sit, nostrum. Unde numquam magni iste quia? Est accusantium doloremque temporibus quo animi quas itaque modi accusamus iste, et ratione excepturi deserunt ullam nihil.
             </div>
         </div>
+        <div id="menu-panel">
+            <div id="menu-header">
+                <img id="close-menu-icon" src="assets/xmark.svg">
+            </div>
+        </div>
         <div class="ad-column">
         </div>
     </main>
@@ -101,4 +112,7 @@
     </footer> 
 
 </body>
+<!--scripts placed at the bottom to ensure that all of the DOM will be rendered by the time that they are linked-->
+<script src="scripts/headerShrink.js"></script>
+<script src="scripts/dropdownMenu.js"></script>
 </html>

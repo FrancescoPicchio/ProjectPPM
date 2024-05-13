@@ -3,11 +3,13 @@ body {
   flex-flow: column;
   justify-content: center;
   margin: 0;
+  font-weight: 200;
 }
 
 .disclaimer {
   display: flex;
   justify-content: center;
+  flex-grow: 1;
   padding: 0px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -15,9 +17,9 @@ body {
   position: sticky;
   top: 0;
   min-width: 100%;
+  height: 20px;
   background-color: black;
   color: white;
-  height: 20px;
 }
 .disclaimer a, .disclaimer a:visited {
   text-decoration: none;
@@ -41,7 +43,7 @@ main .ad-column {
   background-color: lightgray;
 }
 main #main-column {
-  width: 1000px;
+  width: 1050px;
   flex-grow: 0;
   margin: 0;
   border: 0;
@@ -51,7 +53,7 @@ main #main-column {
 main #main-column header {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   position: sticky;
   padding: 10px;
   top: 30px;
@@ -59,40 +61,55 @@ main #main-column header {
   background-color: white;
   color: black;
 }
-main #main-column header #header-logo {
-  max-width: 40%;
-  height: auto;
-  /*FIXME make logo clip over the navbar on the upper right*/
-}
 main #main-column header #subscribe-box {
-  min-width: 250px;
+  width: 30%;
   font-size: 12px;
 }
 main #main-column header #subscribe-box #subscribe-button {
   display: flex;
   justify-content: center;
-  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 25px;
+  padding-left: 25px;
   background-color: #8e0000;
   color: white;
   text-decoration: none;
 }
 main #main-column header #subscribe-box #subscribe-button:hover {
-  background-color: #430000;
+  background-color: #5c0000;
+}
+main #main-column header #logo-link {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 35%;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+main #main-column header #logo-link #header-logo {
+  max-height: 100%;
+  height: auto;
+  display: block;
 }
 main #main-column header #navbar-links {
   display: flex;
   flex-direction: row;
   list-style-type: none;
   font-size: 12px;
-  /*-n selects the items from the beginning (not semantically a minus) and +3 means up to the third child*/
+  width: 30%;
+  margin: 0px;
+  padding: 0px;
 }
-main #main-column header #navbar-links li > a {
-  padding: 2px;
+main #main-column header #navbar-links li {
+  padding: 10px;
+}
+main #main-column header #navbar-links li a {
   text-decoration: none;
   color: gray;
 }
-main #main-column header #navbar-links:nth-child(4) > a {
-  color: red;
+main #main-column header #navbar-links li #open-menu-button:hover {
+  cursor: pointer;
 }
 main #main-column #header-director-and-update {
   display: flex;
@@ -146,6 +163,19 @@ main #main-column .main-content {
   font-size: 25px;
   font-family: tt norms medium;
 }
+main #menu-panel {
+  display: none;
+  background-color: black;
+  width: 1050px;
+}
+main #menu-panel #menu-header {
+  display: flex;
+  justify-content: flex-end;
+}
+main #menu-panel #menu-header #close-menu-icon {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(317deg) brightness(105%) contrast(104%);
+  padding: 10px;
+}
 
 footer {
   display: flex;
@@ -156,17 +186,16 @@ footer {
   color: white;
 }
 footer .footer-content {
-  width: 1000px;
-  flex-grow: 0;
+  width: 1050px;
   background-color: darkslategray;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
   .ad-column {
     display: none;
   }
-  .main-column, .footer-content {
-    min-width: 100%;
+  #main-column, .footer-content, #menu-panel {
+    max-width: 100%;
   }
 }
 
