@@ -80,6 +80,7 @@ main {
                 width: 30%;
                 font-size: 12px;
 
+                //FIXME justify content center doesn't work on github pages
                 #subscribe-button {
                     display: flex;
                     justify-content: center;
@@ -284,7 +285,7 @@ footer {
     }
 }
 
-
+//FIXME when hosted on github pages the media queary activates even when the page width > 1050px
 @media screen and (max-width: 1050px) {
     .ad-column {
         display: none;
