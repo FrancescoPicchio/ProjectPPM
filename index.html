@@ -28,21 +28,16 @@
                 <a id="logo-link" href="">
                     <img id="header-logo" src="assets/logo fq.png" alt="logo di Il Fatto Quotidiano">
                 </a>
-                <div id="navbar-box">
-                    <ul id="navbar-links">
-                        <li><a href ="https://www.fondazioneilfattoquotidiano.org">Fondazione FQ</a></li>
-                        <li><a target=”_blank” href ="https://www.scuoladelfatto.it/home">Scuola del Fatto</a></li>
-                        <li><a target=”_blank” href ="https://community.ilfattoquotidiano.it/?_gl=1%2A1f37133%2A_ga%2AMTAxMjI4Nzc5Ny4xNzEzODY0ODgw%2A_ga_NFF0RV6Y1Z%2AMTcxNDk5MTU2My4xMi4xLjE3MTQ5OTQzMDEuMzQuMC4w">Community</a></li>
-                        <!--had problem with child selector in scss so I did inline style as a workaround-->
-                        <li><a style="color: #8e0000" href ="https://www.ilfattoquotidiano.it/abbonati/">Abbonati</a></li>
-                        <li><a style="color: black" target=”_blank” href ="https://shop.ilfattoquotidiano.it/login/">Accedi</a></li>
-                        <li><a><img src="assets/search.svg" alt="link per barra di ricerca"></a></li>
-                        <li><img id="open-menu-button" src="assets/menu-scale.svg" alt="menù"></li>
-                    </ul>
-                    <div id="navbar">
-
-                    </div>
-                </div>
+                <ul id="navbar">
+                    <li><a href ="https://www.fondazioneilfattoquotidiano.org">Fondazione FQ</a></li>
+                    <li><a target=”_blank” href ="https://www.scuoladelfatto.it/home">Scuola del Fatto</a></li>
+                    <li><a target=”_blank” href ="https://community.ilfattoquotidiano.it/?_gl=1%2A1f37133%2A_ga%2AMTAxMjI4Nzc5Ny4xNzEzODY0ODgw%2A_ga_NFF0RV6Y1Z%2AMTcxNDk5MTU2My4xMi4xLjE3MTQ5OTQzMDEuMzQuMC4w">Community</a></li>
+                    <!--had problem with child selector in scss so I did inline style as a workaround-->
+                    <li><a style="color: #8e0000" href ="https://www.ilfattoquotidiano.it/abbonati/">Abbonati</a></li>
+                    <li><a style="color: black" target=”_blank” href ="https://shop.ilfattoquotidiano.it/login/">Accedi</a></li>
+                    <li><a><img src="assets/search.svg" alt="link per barra di ricerca"></a></li>
+                    <li><img id="open-menu-button" src="assets/menu-scale.svg" alt="menù"></li>
+                </ul>
             </header>
             <div id="header-director-and-update">
             <p>Direttore: Peter Gomez</p>
@@ -72,7 +67,7 @@
                         <img src="assets/telegram.svg" alt="link per telegram"></a></li>
                 </ul>
             </div>
-            <div class="main-content">
+            <div id="main-content">
                 <div id="FQExtra">
                     <div id="FQExtra-header">
                         <h4>
@@ -89,8 +84,52 @@
                             </a>
                         </h4>
                     </div>
-                    <div class="carousel">
-                        <!--TODO add slideshow, this was done in the original site using a library called flickity-->
+                    <div id="FQExtra-carousel">
+                        <a href="#" class="FQExtra-article">
+                            <div class="FQExtra-article-text">
+                                <h4 class="FQExtra-article-topic">Argomento</h4>
+                                <h4 class="FQExtra-article-title">Titolo Articolo 1</h4>
+                            </div>
+                            <img src="assets/article-image-placeholder.svg" alt="immagine di articolo FQExtra">
+                        </a>
+                        <a href="#" class="FQExtra-article">
+                            <div class="FQExtra-article-text">
+                                <h4 class="FQExtra-article-topic">Argomento</h4>
+                                <h4 class="FQExtra-article-title">Titolo Articolo 1</h4>
+                            </div>
+                            <img src="assets/article-image-placeholder.svg" alt="immagine di articolo FQExtra">
+                        </a>
+                        <a href="#" class="FQExtra-article">
+                            <div class="FQExtra-article-text">
+                                <h4 class="FQExtra-article-topic">Argomento</h4>
+                                <h4 class="FQExtra-article-title">Titolo Articolo 1</h4>
+                            </div>
+                            <img src="assets/article-image-placeholder.svg" alt="immagine di articolo FQExtra">
+                        </a>
+                        <a href="#" class="FQExtra-article">
+                            <div class="FQExtra-article-text">
+                                <h4 class="FQExtra-article-topic">Argomento</h4>
+                                <h4 class="FQExtra-article-title">Titolo Articolo 1</h4>
+                            </div>
+                            <img src="assets/article-image-placeholder.svg" alt="immagine di articolo FQExtra">
+                        </a>
+                    </div>
+                </div>
+                <div class="article">
+                    <a href="#" class ="article-title">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, officiis id dolores error omnis nisi aspernatur! Veritatis, quaerat unde.
+                    </a>
+                    <div class="rest-of-article-wrapper">
+                        <a href="#"><img src="assets/article-image-placeholder.svg"></a>
+                        <div class="rest-of-article-text">
+                            <a href="#" class="article-info-wrapper">
+                                <p>di Nome Cognome</p>
+                                <img href="#" src="assets/bookmark.svg">
+                                <img href="#" src="assets/share-ios.svg">
+                                <img href="#" src="assets/comment.svg">
+                            </a>
+                            <a href="#" class="related-article"></a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 $background-color: white;
 $ad-coloumn-bg-color: lightgray;
+$main-content-highlight-color: #8c0404;
 $main-width: 1050px;
 $small-font-size: 12px;
 
@@ -10,6 +11,8 @@ body {
     justify-content: center;
     margin: 0;
     font-weight: 200;
+    //Playfair Display will be the main font and Times New Roman is the fallback
+    font-family: 'Playfair Display', 'Times New Roman';
     overflow: auto;
 }
 
@@ -39,14 +42,14 @@ main {
     flex-flow: row;
     min-height: 100vh; /*100vh means 100% of viewport height*/
 
-    /*NOTE: in the original site, when the windows is shrunk on a desktop, the right hand column still remains visible on the page
-    but the left one doesnt. I didn't implement this "feature"*/
     .ad-column{
         flex-grow: 1;
         margin: 0;
         border: 0;
         padding: 10px;
         background-color: $ad-coloumn-bg-color;
+        //added display block to solve an issue with github pages not displaying the ad column properly, it's outside of main because it'll act weirdly with the media queary otherwise
+        display: block;
     }
 
     /*FIXME footer-content doesn't align perfectly when the screen is almost shrunk enough to change display none to the ad-columns.
@@ -114,13 +117,13 @@ main {
                 }
             }
 
-            #navbar-links {
+            #navbar {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 list-style-type: none;
                 font-size: 12px;
-                width: 30%;
+                width: 40%;
                 margin: 0px;
                 padding: 0px;
 
@@ -183,26 +186,89 @@ main {
             flex-flow: row;
         }
 
-        #FQExtra-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            border-radius: 15px;
-            padding: 5px;
-            background-color: red;
-            color: white;
+        #main-content {
+            #FQExtra{
 
-                h4{
-                    margin: 0px;
+                #FQExtra-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-radius: 15px;
                     padding: 5px;
-                    font-weight: normal;
+                    background-color: red;
+                    color: white;
+                    max-height: 20px;
+                    font-size: 18px;
 
-                    a  {
+                        h4{
+                            margin: 0px;
+                            padding: 5px;
+                            font-weight: normal;
+
+                            a  {
+                                text-decoration: none;
+                                color: white;
+                            }
+                        }
+                    }
+
+                #FQExtra-carousel {
+                    //TODO add a custom scrollbar, especially making it hidden when the user isn't scrolling
+                    display: flex;
+                    flex-direction: row;
+                    background-color: #413d3b;
+                    overflow-x: scroll;
+
+                    .FQExtra-article {
+                        display: flex;
+                        flex-direction: row;
+                        min-width: 50%;
                         text-decoration: none;
-                        color: white;
+                        
+                        .FQExtra-article-text {
+                            padding: 15px 30px;
+                            
+                            .FQExtra-article-topic {
+                                color: red;
+                                margin: 15px 0px;
+                            }
+
+                            .FQExtra-article-title {
+                                color: white;
+                                margin: 15px 0px;
+                            }
+                        }
                     }
                 }
-            }        
+            }
+            .article {
+                max-width: 60%;
+                height: auto;
+                border-right: 2.5px lightgray;
+                border-right-style: solid;
+                padding: 5px;
+                margin: 10px;
+
+                .article-title {
+                    color: black;
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-size: 32px;
+                }
+                .article-title:hover {
+                    text-decoration: underline;
+                }
+
+                .rest-of-article-wrapper {
+                    display: flex;
+                    
+                    a {
+                        text-decoration: none;
+                        color: $main-content-highlight-color;
+                    }
+                }
+            }
+        }        
 
         .main-content {
             padding: 10px;
@@ -285,12 +351,19 @@ footer {
     }
 }
 
-//FIXME when hosted on github pages the media queary activates even when the page width > 1050px
-@media screen and (max-width: 1050px) {
-    .ad-column {
-        display: none;
+//IMPORTANT! Make media quearies with as nested as the rest of the scss code or else it won't have enough priority to apply the proper properties
+@media (max-width: 1150px) {
+    main {
+        .ad-column {
+            display: none;
+        }
+        #main-column, #menu-panel {
+            max-width: 100%;
+        }
     }
-    #main-column, .footer-content, #menu-panel {
-        max-width: 100%;
+    footer{
+        .footer-content{
+            max-width: 100%;
+        }
     }
 }

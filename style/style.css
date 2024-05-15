@@ -4,6 +4,7 @@ body {
   justify-content: center;
   margin: 0;
   font-weight: 200;
+  font-family: "Playfair Display", "Times New Roman";
   overflow: auto;
 }
 
@@ -31,8 +32,6 @@ main {
   display: flex;
   flex-flow: row;
   min-height: 100vh; /*100vh means 100% of viewport height*/
-  /*NOTE: in the original site, when the windows is shrunk on a desktop, the right hand column still remains visible on the page
-  but the left one doesnt. I didn't implement this "feature"*/
   /*FIXME footer-content doesn't align perfectly when the screen is almost shrunk enough to change display none to the ad-columns.
   Actually the problem seems to be that the main column is shrunk when around 820px of page width for some reason*/
 }
@@ -42,6 +41,7 @@ main .ad-column {
   border: 0;
   padding: 10px;
   background-color: lightgray;
+  display: block;
 }
 main #main-column {
   width: 1050px;
@@ -98,24 +98,24 @@ main #main-column header #logo-link #header-logo {
   display: block;
   padding: 5px;
 }
-main #main-column header #navbar-links {
+main #main-column header #navbar {
   display: flex;
   flex-direction: row;
   align-items: center;
   list-style-type: none;
   font-size: 12px;
-  width: 30%;
+  width: 40%;
   margin: 0px;
   padding: 0px;
 }
-main #main-column header #navbar-links li {
+main #main-column header #navbar li {
   padding: 10px;
 }
-main #main-column header #navbar-links li a {
+main #main-column header #navbar li a {
   text-decoration: none;
   color: gray;
 }
-main #main-column header #navbar-links li #open-menu-button:hover {
+main #main-column header #navbar li #open-menu-button:hover {
   cursor: pointer;
 }
 main #main-column #header-director-and-update {
@@ -154,23 +154,72 @@ main #main-column .daily-topics {
   display: flex;
   flex-flow: row;
 }
-main #main-column #FQExtra-header {
+main #main-column #main-content #FQExtra #FQExtra-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   border-radius: 15px;
   padding: 5px;
   background-color: red;
   color: white;
+  max-height: 20px;
+  font-size: 18px;
 }
-main #main-column #FQExtra-header h4 {
+main #main-column #main-content #FQExtra #FQExtra-header h4 {
   margin: 0px;
   padding: 5px;
   font-weight: normal;
 }
-main #main-column #FQExtra-header h4 a {
+main #main-column #main-content #FQExtra #FQExtra-header h4 a {
   text-decoration: none;
   color: white;
+}
+main #main-column #main-content #FQExtra #FQExtra-carousel {
+  display: flex;
+  flex-direction: row;
+  background-color: #413d3b;
+  overflow-x: scroll;
+}
+main #main-column #main-content #FQExtra #FQExtra-carousel .FQExtra-article {
+  display: flex;
+  flex-direction: row;
+  min-width: 50%;
+  text-decoration: none;
+}
+main #main-column #main-content #FQExtra #FQExtra-carousel .FQExtra-article .FQExtra-article-text {
+  padding: 15px 30px;
+}
+main #main-column #main-content #FQExtra #FQExtra-carousel .FQExtra-article .FQExtra-article-text .FQExtra-article-topic {
+  color: red;
+  margin: 15px 0px;
+}
+main #main-column #main-content #FQExtra #FQExtra-carousel .FQExtra-article .FQExtra-article-text .FQExtra-article-title {
+  color: white;
+  margin: 15px 0px;
+}
+main #main-column #main-content .article {
+  max-width: 60%;
+  height: auto;
+  border-right: 2.5px lightgray;
+  border-right-style: solid;
+  padding: 5px;
+  margin: 10px;
+}
+main #main-column #main-content .article .article-title {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 32px;
+}
+main #main-column #main-content .article .article-title:hover {
+  text-decoration: underline;
+}
+main #main-column #main-content .article .rest-of-article-wrapper {
+  display: flex;
+}
+main #main-column #main-content .article .rest-of-article-wrapper a {
+  text-decoration: none;
+  color: #8c0404;
 }
 main #main-column .main-content {
   padding: 10px;
@@ -240,11 +289,14 @@ footer .footer-content {
   background-color: darkslategray;
 }
 
-@media screen and (max-width: 1050px) {
-  .ad-column {
+@media (max-width: 1150px) {
+  main .ad-column {
     display: none;
   }
-  #main-column, .footer-content, #menu-panel {
+  main #main-column, main #menu-panel {
+    max-width: 100%;
+  }
+  footer .footer-content {
     max-width: 100%;
   }
 }
