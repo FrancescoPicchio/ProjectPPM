@@ -15,6 +15,7 @@
     </div>
     <main>
         <div id="main-column">
+
             <header>
                 <div id="subscribe-box">
                     <h3>Sostieni il nostro giornalismo.</h3>
@@ -37,6 +38,7 @@
                     <li><img id="open-menu-button" src="assets/menu-scale.svg" alt="menù"></li>
                 </ul>
             </header>
+
             <div id="header-director-and-update">
             <p>Direttore: Peter Gomez</p>
             <!--TODO? synchronize this with github's repo maybe?-->
@@ -65,7 +67,9 @@
                         <img src="assets/telegram.svg" alt="link per telegram"></a></li>
                 </ul>
             </div>
+
             <div id="main-content">
+
                 <div id="FQExtra">
                     <div id="FQExtra-header">
                         <h4>
@@ -83,6 +87,7 @@
                         </h4>
                     </div>
                     <div id="FQExtra-carousel">
+                        <!--FIXME class should come before href-->
                         <a href="#" class="FQExtra-article">
                             <div class="FQExtra-article-text">
                                 <h4 class="FQExtra-article-topic">Argomento</h4>
@@ -113,29 +118,65 @@
                         </a>
                     </div>
                 </div>
+
                 <div class="article">
+                    <!--FIXME class should come before href-->
                     <a href="#" class ="article-title">
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, officiis id dolores error omnis nisi aspernatur! Veritatis, quaerat unde.
                     </a>
                     <div class="rest-of-article-wrapper">
-                        <a href="#"><img src="assets/article-image-placeholder.svg"></a>
+                        <a href="#" class="article-thumbnail"><img src="assets/article-image-placeholder.svg"></a>
                         <div class="rest-of-article-text">
                             <a href="#" class="article-info-wrapper">
                                 <p>di Nome Cognome</p>
-                                <img href="#" src="assets/bookmark.svg">
-                                <img href="#" src="assets/share-ios.svg">
-                                <img href="#" src="assets/comment.svg">
+                                <div class= "info-and-share">
+                                    <img href="#" src="assets/bookmark.svg">
+                                    <img href="#" src="assets/share-ios.svg">
+                                    <img href="#" src="assets/comment.svg">
+                                </div>
                             </a>
-                            <a href="#" class="related-article"></a>
+                            <a href="#" class="related-article">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur quae voluptatem libero, totam laboriosam hic.</a>
+                            <a href="#" class="related-article">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita ea consequatur quisquam esse deserunt soluta!</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-with-video">
+                    <a href="#"><img src="assets/article-video-placeholder.svg" alt="video di articolo"></a>
+                    <a href="#"><p>VIDEO</p></a>
+                    <a href="#"><h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias maiores quam autem aliquid omnis natus.</h3></a>
+                </div>
+
+                <div class="fullrow-article">
+                    <div class="article">
+                        <!--FIXME class should come before href-->
+                        <a href="#" class="article-title">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, officiis id dolores error omnis nisi aspernatur! Veritatis, quaerat unde.
+                        </a>
+                        <div class="rest-of-article-wrapper">
+                            <a href="#" class="article-thumbnail"><img src="assets/article-image-placeholder.svg"></a>
+                            <div class="rest-of-article-text">
+                                <a class="article-excerpt" href="#"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ipsa odit veniam doloremque itaque ducimus iusto, quasi quidem atque exercitationem eius animi possimus excepturi sequi nam blanditiis et. Officiis iure dolore quod, tenetur distinctio eos ipsa sequi commodi autem ab architecto dolores est, libero veritatis?</p></a>
+                                <a href="#" class="article-info-wrapper">
+                                    <p>di Nome Cognome</p>
+                                    <div class= "info-and-share">
+                                        <img href="#" src="assets/bookmark.svg">
+                                        <img href="#" src="assets/share-ios.svg">
+                                        <img href="#" src="assets/comment.svg">
+                                    </div>
+                                </a>
+                                <a href="#" class="related-article">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur quae voluptatem libero, totam laboriosam hic.</a>
+                                <a href="#" class="related-article">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita ea consequatur quisquam esse deserunt soluta!</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <div id="menu-panel">
             <div id="menu-header">
                 <img id="close-menu-icon" src="assets/xmark.svg">
-                
             </div>
             <a id="home-link-menu" href="">
                 ILFATTOQUOTIDIANO.IT
@@ -197,6 +238,7 @@
             <div id="menu-footer"></div>
         </div>
     </main>
+
     <footer>
         <div class="footer-content">
             footer

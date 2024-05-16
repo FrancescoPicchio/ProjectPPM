@@ -45,15 +45,20 @@ main #main-column {
   padding: 15px;
   background-color: white;
   /*TODO this div doesn't display on mobile*/
+  /*Not so sure why this is here
+  .main-content {
+      padding: 10px;
+      font-size: 25px;
+      font-family: tt norms medium;
+  }*/
 }
 main #main-column header {
+  position: sticky;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  position: sticky;
+  justify-content: space-around;
   top: 30px;
-  max-height: 160px;
-  width: 1050px;
+  height: 120px;
   background-color: white;
   color: black;
 }
@@ -67,10 +72,8 @@ main #main-column header #subscribe-box {
 main #main-column header #subscribe-box #subscribe-button {
   display: flex;
   justify-content: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 25px;
-  padding-left: 25px;
+  padding: 10px 20px;
+  width: 50%;
   background-color: #8e0000;
   color: white;
   text-decoration: none;
@@ -95,15 +98,15 @@ main #main-column header #logo-link #header-logo {
 main #main-column header #navbar {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   list-style-type: none;
   font-size: 12px;
-  width: 40%;
+  width: 30%;
   margin: 0px;
   padding: 0px;
 }
 main #main-column header #navbar li {
-  padding: 10px;
+  padding: 5px;
 }
 main #main-column header #navbar li a {
   text-decoration: none;
@@ -147,6 +150,14 @@ main #main-column #home-before-content .daily-topics > ul li a:hover, main #main
 main #main-column .daily-topics {
   display: flex;
   flex-flow: row;
+}
+main #main-column #main-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+main #main-column #main-content #FQExtra {
+  width: 100%;
 }
 main #main-column #main-content #FQExtra #FQExtra-header {
   display: flex;
@@ -192,7 +203,7 @@ main #main-column #main-content #FQExtra #FQExtra-carousel .FQExtra-article .FQE
   margin: 15px 0px;
 }
 main #main-column #main-content .article {
-  max-width: 60%;
+  width: 65%;
   height: auto;
   border-right: 2.5px lightgray;
   border-right-style: solid;
@@ -210,15 +221,86 @@ main #main-column #main-content .article .article-title:hover {
 }
 main #main-column #main-content .article .rest-of-article-wrapper {
   display: flex;
+  padding: 10px 0px;
 }
 main #main-column #main-content .article .rest-of-article-wrapper a {
   text-decoration: none;
-  color: #8c0404;
+  color: black;
 }
-main #main-column .main-content {
-  padding: 10px;
-  font-size: 25px;
-  font-family: tt norms medium;
+main #main-column #main-content .article .rest-of-article-wrapper a:hover {
+  text-decoration: underline;
+}
+main #main-column #main-content .article .rest-of-article-wrapper .article-thumbnail {
+  width: 50%;
+}
+main #main-column #main-content .article .rest-of-article-wrapper .article-thumbnail img {
+  width: 100%;
+  height: auto;
+}
+main #main-column #main-content .article .rest-of-article-wrapper .rest-of-article-text {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 0px 10px;
+}
+main #main-column #main-content .article .rest-of-article-wrapper .rest-of-article-text .article-info-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+main #main-column #main-content .article .rest-of-article-wrapper .rest-of-article-text .article-info-wrapper p {
+  color: lightgray;
+  margin-top: 0px;
+}
+main #main-column #main-content .article .rest-of-article-wrapper .rest-of-article-text .related-article {
+  padding: 5px;
+}
+main #main-column #main-content .fullrow-article {
+  width: 100%;
+}
+main #main-column #main-content .fullrow-article .article {
+  width: 100%;
+}
+main #main-column #main-content .fullrow-article .article .article-title {
+  font-size: 42px;
+}
+main #main-column #main-content .fullrow-article .article .article-excerpt {
+  font-size: 18px;
+  color: black;
+}
+main #main-column #main-content .fullrow-article .article .article-excerpt p {
+  margin-top: 0px;
+}
+main #main-column #main-content .fullrow-article .article .article-thumbnail {
+  width: 65%;
+}
+main #main-column #main-content .fullrow-article .article .rest-of-article-text {
+  width: 30%;
+}
+main #main-column #main-content .article-with-video {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 10px;
+  background-color: lightgray;
+}
+main #main-column #main-content .article-with-video a {
+  width: 100%;
+  text-decoration: none;
+  color: black;
+}
+main #main-column #main-content .article-with-video a:hover {
+  text-decoration: underline;
+}
+main #main-column #main-content .article-with-video p, main #main-column #main-content .article-with-video h3 {
+  padding: 0px 10px;
+}
+main #main-column #main-content .article-with-video p {
+  color: #8e0000;
+}
+main #main-column #main-content .article-with-video img {
+  width: 100%;
 }
 main #menu-panel {
   display: none;
@@ -280,7 +362,7 @@ footer {
 footer .footer-content {
   width: 1050px;
   padding: 15px;
-  background-color: darkslategray;
+  background-color: #191919;
 }
 
 @media (max-width: 1150px) {

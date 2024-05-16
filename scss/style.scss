@@ -55,14 +55,14 @@ main {
         background-color: $background-color;
     
         header {
+            position: sticky;
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
-            position: sticky;
+            //FIXME space around fixes navbar overflowing to the right, but makes the subscribe div slightly too central
+            justify-content: space-around;
             //FIXME there is literally one pixel too much when the page scrolls down
             top: 30px;
-            max-height: 160px;
-            width: $main-width;
+            height: 120px;
             background-color: white;
             color: black;
         
@@ -79,10 +79,8 @@ main {
                 #subscribe-button {
                     display: flex;
                     justify-content: center;
-                    padding-top: 10px;
-                    padding-bottom: 10px;
-                    padding-right: 25px;
-                    padding-left: 25px;
+                    padding: 10px 20px;
+                    width: 50%;
                     background-color: #8e0000;
                     color: white;
                     text-decoration: none;
@@ -109,18 +107,19 @@ main {
                 }
             }
 
+            //FIXME navbar is slightly too much to the right, possible fix may be to wrap the logo and the navbar in a single div to better use space around
             #navbar {
                 display: flex;
                 flex-direction: row;
-                align-items: center;
+                align-items: flex-start;
                 list-style-type: none;
                 font-size: 12px;
-                width: 40%;
+                width: 30%;
                 margin: 0px;
                 padding: 0px;
 
                     li {
-                        padding: 10px;
+                        padding: 5px;
 
                         a {
                             text-decoration: none;
@@ -179,7 +178,13 @@ main {
         }
 
         #main-content {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+
             #FQExtra{
+                width: 100%;
 
                 #FQExtra-header {
                     display: flex;
@@ -234,7 +239,7 @@ main {
                 }
             }
             .article {
-                max-width: 60%;
+                width: 65%;
                 height: auto;
                 border-right: 2.5px lightgray;
                 border-right-style: solid;
@@ -253,20 +258,114 @@ main {
 
                 .rest-of-article-wrapper {
                     display: flex;
+                    padding: 10px 0px;
                     
                     a {
                         text-decoration: none;
-                        color: $main-content-highlight-color;
+                        color: black;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
+
+                    .article-thumbnail {
+                        width: 50%;
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+
+                    .rest-of-article-text {
+                        display: flex;
+                        flex-direction: column;
+                        width: 50%;
+                        padding: 0px 10px;                        
+
+                        .article-info-wrapper {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            p {
+                                color: lightgray;
+                                margin-top: 0px;
+                            }
+
+                        }
+
+                        .related-article {
+                            padding: 5px;
+                        }
                     }
                 }
             }
-        }        
 
+            .fullrow-article {
+                width: 100%;
+
+                .article {
+                    width: 100%;
+
+                    .article-title {
+                        font-size: 42px;
+                    }
+
+                    .article-excerpt {
+                        font-size: 18px;
+                        color: black;
+                        p {
+                            margin-top: 0px;
+                        }
+                    }
+
+                    .article-thumbnail {
+                        width: 65%;
+                    }
+
+                    .rest-of-article-text {
+                        width: 30%;
+                    }
+                }
+            }
+
+            .article-with-video {
+                display: flex;
+                flex-direction: column;
+                width: 30%;
+                margin: 10px;
+                background-color: $ad-coloumn-bg-color;
+
+                a {
+                    width: 100%;
+                    text-decoration: none;
+                    color: black;
+                }
+
+                a:hover {
+                    text-decoration: underline;
+                }
+
+                p, h3 {
+                    padding: 0px 10px;
+                }
+
+                p {
+                    color: #8e0000;
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+        }        
+        /*Not so sure why this is here
         .main-content {
             padding: 10px;
             font-size: 25px;
             font-family: tt norms medium;
-        }
+        }*/
     }
 
     #menu-panel {
@@ -339,14 +438,13 @@ footer {
     .footer-content {
         width: $main-width;
         padding: 15px;
-        background-color: darkslategray;
+        background-color: #191919;
     }
 }
 
 //IMPORTANT! Make media quearies with as nested as the rest of the scss code or else it won't have enough priority to apply the proper properties
 @media (max-width: 1150px) {
     main {
-        
         #main-column, #menu-panel {
             max-width: 100%;
         }
