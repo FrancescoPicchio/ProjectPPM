@@ -39,24 +39,16 @@ body {
 
 main {
     display: flex;
-    flex-flow: row;
+    justify-content: center;
     min-height: 100vh; /*100vh means 100% of viewport height*/
-
-    .ad-column{
-        flex-grow: 1;
-        margin: 0;
-        border: 0;
-        padding: 10px;
-        background-color: $ad-coloumn-bg-color;
-        //added display block to solve an issue with github pages not displaying the ad column properly, it's outside of main because it'll act weirdly with the media queary otherwise
-        display: block;
-    }
+    background-color: $ad-coloumn-bg-color;
 
     /*FIXME footer-content doesn't align perfectly when the screen is almost shrunk enough to change display none to the ad-columns.
     Actually the problem seems to be that the main column is shrunk when around 820px of page width for some reason*/
     #main-column {
+        display: flex;
+        flex-direction: column;
         width: $main-width;
-        flex-grow: 0;
         margin: 0;
         border: 0;
         padding: 15px;
@@ -354,9 +346,7 @@ footer {
 //IMPORTANT! Make media quearies with as nested as the rest of the scss code or else it won't have enough priority to apply the proper properties
 @media (max-width: 1150px) {
     main {
-        .ad-column {
-            display: none;
-        }
+        
         #main-column, #menu-panel {
             max-width: 100%;
         }

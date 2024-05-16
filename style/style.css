@@ -30,22 +30,16 @@ body {
 
 main {
   display: flex;
-  flex-flow: row;
+  justify-content: center;
   min-height: 100vh; /*100vh means 100% of viewport height*/
+  background-color: lightgray;
   /*FIXME footer-content doesn't align perfectly when the screen is almost shrunk enough to change display none to the ad-columns.
   Actually the problem seems to be that the main column is shrunk when around 820px of page width for some reason*/
 }
-main .ad-column {
-  flex-grow: 1;
-  margin: 0;
-  border: 0;
-  padding: 10px;
-  background-color: lightgray;
-  display: block;
-}
 main #main-column {
+  display: flex;
+  flex-direction: column;
   width: 1050px;
-  flex-grow: 0;
   margin: 0;
   border: 0;
   padding: 15px;
@@ -290,9 +284,6 @@ footer .footer-content {
 }
 
 @media (max-width: 1150px) {
-  main .ad-column {
-    display: none;
-  }
   main #main-column, main #menu-panel {
     max-width: 100%;
   }
