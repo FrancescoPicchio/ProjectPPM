@@ -5,6 +5,7 @@ $main-width: 1050px;
 $small-font-size: 12px;
 
 * {
+    //makes it so that padding is accounted for when calculating div size
     box-sizing: border-box;
 }
 
@@ -19,15 +20,14 @@ body {
 .disclaimer {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex: 1;
-    padding: 0px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 0px 5px;
     margin: 0px;
     position: sticky;
     top: 0;
-    max-width: auto;
-    height: 20px;
+    max-width: 100%;
+    height: 30px;
     background-color: black;
     color: white;
 
@@ -74,7 +74,7 @@ main {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                max-width: 30%;
+                width: 30%;
                 font-size: 12px;
 
                 h3 {
@@ -90,7 +90,7 @@ main {
                     display: flex;
                     justify-content: center;
                     padding: 10px 20px;
-                    width: 50%;
+                    width: 70%;
                     background-color: #8e0000;
                     color: white;
                     text-decoration: none;
@@ -148,33 +148,44 @@ main {
             flex-flow: row;
             justify-content: space-between;
 
-            p {
-                padding: 10px;
-                font-size: 15px;
+            h6 {
+                margin: 0px;
+                padding: 10px 0px;
+                color: #00000066;
             }
         }
 
         #home-before-content {
             display: flex;
             justify-content: space-between;
-            padding: 5px;
+            padding: 0px;
             margin: 0px;
 
             .daily-topics {
                 display: flex;
+                flex: 1;
                 flex-flow: row;
                 overflow-x: scroll;
                 //hides the scrollbar for edge, firefox and ie
                 -ms-overflow-style: none;
                 scrollbar-width: none;
-                
+                max-width: 80%;
+
+                h6 {
+                    color: #00000066;
+                }
+
+                .item-daily-topics {
+                    flex: 1;
+                    font-family: 'Roboto';
+                }
             }
 
             .daily-topics::-webkit-scrollbar {
                  display: none; 
             }
 
-            .daily-topics>ul, ul {
+            .item-daily-topics, .social-links {
                 display: flex;
                 flex-flow: row;
                 align-items: center;
@@ -211,12 +222,13 @@ main {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    border-radius: 15px;
-                    padding: 5px;
+                    border-radius: 10px;
+                    padding: 15px;
                     background-color: red;
                     color: white;
                     max-height: 20px;
                     font-size: 18px;
+                    font-family: 'Roboto';
 
                         h4{
                             margin: 0px;
@@ -237,7 +249,8 @@ main {
                     background-color: #413d3b;
                     overflow-x: scroll;
                     scroll-snap-type: x mandatory;
-                    scroll-padding: 50px;
+                    scroll-padding: 10px;
+                    padding-right: 15px;
 
                     .FQExtra-article {
                         //articles overlap when shrinking to small widths
@@ -246,6 +259,7 @@ main {
                         scroll-snap-align: start;
                         min-width: 50%;
                         text-decoration: none;
+                        font-family: 'Roboto';
                         
                         .FQExtra-article-text {
                             padding: 15px 30px;
@@ -326,6 +340,8 @@ main {
 
                         .related-article {
                             padding: 5px;
+                            font-family: 'Roboto';
+                            font-weight: 500;
                         }
                     }
                 }
@@ -435,12 +451,17 @@ main {
 
     #menu-panel {
         display: none;
+        //flexbox properties even if display isn't flex because it'll become so once visible
+        flex-direction: column;
+        justify-content: space-between;
         background-color: black;
         width: $main-width;
         max-height: 100vh;
         padding: 15px;
         overflow-y: auto;
         color: white;
+        font-family: 'Roboto';
+        font-size: 12px;
 
         #menu-header {
             display: flex;
@@ -471,8 +492,7 @@ main {
                 padding-left: 0px;
 
                 li {
-                    padding-top: 10px;
-                    padding-bottom: 10px;
+                    padding: 15px 0px;
 
                     a {
                         text-decoration: none;
@@ -492,9 +512,11 @@ main {
         }
 
         #menu-footer {
+            position: relative;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            bottom: 0;
 
             #menu-footer-links {
                 display: flex;

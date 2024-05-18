@@ -6,7 +6,7 @@ openMenuButton.addEventListener("click", function() {
     document.querySelector("body").style.overflow = "hidden";
     document.querySelector("#main-column").style.display = "none";
     document.querySelector("footer").style.display = "none";
-    document.querySelector("#menu-panel").style.display = "block";
+    document.querySelector("#menu-panel").style.display = "flex";
 });
 
 closeMenuButton.addEventListener("click", function() {
