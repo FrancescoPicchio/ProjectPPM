@@ -8,7 +8,7 @@ function scrollFunction() {
     document.querySelector("#subscribe-box>h3").style.display = "none";
     document.querySelector("#subscribe-box>p").style.display = "none";
   } else {
-    document.querySelector("header").style.maxHeight = "120px";
+    document.querySelector("header").style.maxHeight = "100px";
     //adjusting the subscribe-box div
     document.querySelector("#subscribe-box>h3").style.display = "block";
     document.querySelector("#subscribe-box>p").style.display = "block";

@@ -32,8 +32,7 @@ body {
     color: white;
 
     a, a:visited {
-        text-decoration: none;
-        color: blue;
+        color: white;
     }
 }
 
@@ -58,11 +57,10 @@ main {
             position: sticky;
             display: flex;
             flex-direction: row;
-            //FIXME space around fixes navbar overflowing to the right, but makes the subscribe div slightly too central
-            justify-content: space-around;
+            justify-content: space-between;
             //FIXME there is literally one pixel too much when the page scrolls down
             top: 30px;
-            height: 120px;
+            height: 100px;
             background-color: white;
             color: black;
         
@@ -74,6 +72,14 @@ main {
                 justify-content: center;
                 width: 30%;
                 font-size: 12px;
+
+                h3 {
+                    font-size: 20px;
+                    margin: 0px 0px 6px 0px;
+                }
+                p {
+                    margin: 0px 0px 10px 0px;
+                }
 
                 //FIXME justify content center doesn't work on github pages
                 #subscribe-button {
@@ -107,11 +113,11 @@ main {
                 }
             }
 
-            //FIXME navbar is slightly too much to the right, possible fix may be to wrap the logo and the navbar in a single div to better use space around
             #navbar {
                 display: flex;
                 flex-direction: row;
                 align-items: flex-start;
+                justify-content: flex-end;
                 list-style-type: none;
                 font-size: 12px;
                 width: 30%;
@@ -215,6 +221,7 @@ main {
                     flex-direction: row;
                     background-color: #413d3b;
                     overflow-x: scroll;
+                    //FIXME either add arrows or 
 
                     .FQExtra-article {
                         display: flex;
@@ -241,10 +248,10 @@ main {
             .article {
                 width: 65%;
                 height: auto;
-                border-right: 2.5px lightgray;
+                border-right: 2px #f2f2f2;
                 border-right-style: solid;
-                padding: 5px;
-                margin: 10px;
+                padding: 0px 15px;
+                margin: 15px 0px;
 
                 .article-title {
                     color: black;
@@ -289,8 +296,12 @@ main {
                             align-items: center;
 
                             p {
-                                color: lightgray;
+                                color: $ad-coloumn-bg-color;
                                 margin-top: 0px;
+                            }
+                            
+                            .article-author:hover {
+                                text-decoration-color: $ad-coloumn-bg-color;
                             }
 
                         }
@@ -307,6 +318,7 @@ main {
 
                 .article {
                     width: 100%;
+                    border: 0px;
 
                     .article-title {
                         font-size: 42px;
@@ -359,13 +371,48 @@ main {
                     width: 100%;
                 }
             }
+
+            .small-article {
+                display: flex;
+                flex-direction: row;
+                width: 33%;
+
+                .article {
+                    width: 100%;
+
+                    .article-thumbnail {
+                        width: 100%;
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    .article-topic {
+                        color: #8e0000;
+                        text-decoration: none;
+                    }
+                    .article-topic:hover {
+                        text-decoration: underline;
+                    }
+
+                    .article-title {
+                        font-size: 20px;
+                    }
+
+                    .rest-of-article-text {
+                        width: 100%;
+                        padding: 0px;
+                        
+                        .article-info-wrapper{
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
         }        
-        /*Not so sure why this is here
-        .main-content {
-            padding: 10px;
-            font-size: 25px;
-            font-family: tt norms medium;
-        }*/
     }
 
     #menu-panel {
@@ -373,7 +420,7 @@ main {
         background-color: black;
         width: $main-width;
         max-height: 100vh;
-        padding: 10px;
+        padding: 15px;
         overflow-y: auto;
         color: white;
 
@@ -394,7 +441,7 @@ main {
         #home-link-menu {
             text-decoration: none;
             color: white;
-            padding-left: 15px;
+            padding-left: 0px;
         }
         #menu-panel-col-wrapper {
             display: flex;
@@ -403,7 +450,7 @@ main {
 
             .menu-panel-col {
                 list-style-type: none;
-                padding-left: 15px;
+                padding-left: 0px;
 
                 li {
                     padding-top: 10px;
@@ -425,6 +472,54 @@ main {
                 }
             }
         }
+
+        #menu-footer {
+
+            #menu-footer-links {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                list-style-type: none;
+                border-bottom: 1.5px lightgray;
+                border-bottom-style: solid;
+                margin: 0px;
+                padding: 15px;
+    
+                li {
+                    a {
+                        color: hsla(0, 0%, 100%, 0.4);
+                        text-decoration: none;
+                        font-size: 12px;
+                        font-weight: 600;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+                    a:hover {
+                        color: hsla(0, 0%, 100%, 0.25);
+                    }
+                }
+            }
+
+            #menu-footer-social {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                list-style-type: none;
+                margin: 0px;
+                padding: 15px;
+                width: 50%;
+    
+                li {
+                    a {
+                        text-decoration: none;
+                        padding: 15px;
+                        img {
+                            //filter is used to change the color of the svg image
+                            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(317deg) brightness(105%) contrast(104%);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 footer {
@@ -435,10 +530,75 @@ footer {
     background-color: black;
     color: white;
 
-    .footer-content {
+    #footer-content {
         width: $main-width;
         padding: 15px;
         background-color: #191919;
+
+        #footer-logo {
+            display: flex;
+            justify-content: center;
+            border-bottom: 1.5px lightgray;
+            border-bottom-style: solid;
+            margin: 0px;
+            padding-bottom: 15px;
+        }
+
+        #footer-links {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            list-style-type: none;
+            border-bottom: 1.5px lightgray;
+            border-bottom-style: solid;
+            margin: 0px;
+            padding: 15px;
+
+            li {
+                a {
+                    color: white;
+                    text-decoration: none;
+                    font-size: 12px;
+                    font-weight: 600;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                a:hover {
+                    color: hsla(0,0%,100%,.7);
+                }
+            }
+        }
+
+        #footer-social {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            list-style-type: none;
+            border-bottom: 1.5px lightgray;
+            border-bottom-style: solid;
+            margin: 0px;
+            padding: 15px;
+
+            li {
+                a {
+                    text-decoration: none;
+                    padding: 15px;
+                    img {
+                        //filter is used to change the color of the svg image
+                        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(317deg) brightness(105%) contrast(104%);
+                    }
+                }
+            }
+        }
+
+        #footer-copyright {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 20px;
+            p {
+                color: #FFFFFF66;
+                font-size: 12px;
+            }
+        }
     }
 }
 
@@ -450,7 +610,7 @@ footer {
         }
     }
     footer{
-        .footer-content{
+        #footer-content{
             max-width: 100%;
         }
     }

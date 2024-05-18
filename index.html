@@ -10,7 +10,7 @@
 <body>
     <div class="disclaimer">
         <!--&nbsp adds a space between a div and a nested <a>-->
-        Sito realizzato a scopo didattico, replicando <a href="https://ilfattoquotidiano.it">&nbsp;il Fatto Quotidiano</a>;
+        Sito realizzato a scopo didattico replicando <a href="https://ilfattoquotidiano.it">&nbsp;il Fatto Quotidiano</a>,
         <a href="./credits.html">&nbsp;crediti per icone nel sito</a>
     </div>
     <main>
@@ -127,14 +127,14 @@
                     <div class="rest-of-article-wrapper">
                         <a href="#" class="article-thumbnail"><img src="assets/article-image-placeholder.svg"></a>
                         <div class="rest-of-article-text">
-                            <a href="#" class="article-info-wrapper">
-                                <p>di Nome Cognome</p>
+                            <div class="article-info-wrapper">
+                                <a class="article-author" href="#"><p>di Nome Cognome</p></a>
                                 <div class= "info-and-share">
-                                    <img href="#" src="assets/bookmark.svg">
-                                    <img href="#" src="assets/share-ios.svg">
-                                    <img href="#" src="assets/comment.svg">
+                                    <a href="#"><img href="#" src="assets/bookmark.svg"></a>
+                                    <a href="#"><img href="#" src="assets/share-ios.svg"></a>
+                                    <a href="#"><img href="#" src="assets/comment.svg"></a>
                                 </div>
-                            </a>
+                            </div>
                             <a href="#" class="related-article">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur quae voluptatem libero, totam laboriosam hic.</a>
                             <a href="#" class="related-article">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita ea consequatur quisquam esse deserunt soluta!</a>
                         </div>
@@ -157,19 +157,161 @@
                             <a href="#" class="article-thumbnail"><img src="assets/article-image-placeholder.svg"></a>
                             <div class="rest-of-article-text">
                                 <a class="article-excerpt" href="#"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ipsa odit veniam doloremque itaque ducimus iusto, quasi quidem atque exercitationem eius animi possimus excepturi sequi nam blanditiis et. Officiis iure dolore quod, tenetur distinctio eos ipsa sequi commodi autem ab architecto dolores est, libero veritatis?</p></a>
-                                <a href="#" class="article-info-wrapper">
-                                    <p>di Nome Cognome</p>
+                                <div class="article-info-wrapper">
+                                    <a class="article-author" href="#"><p>di Nome Cognome</p></a>
                                     <div class= "info-and-share">
-                                        <img href="#" src="assets/bookmark.svg">
-                                        <img href="#" src="assets/share-ios.svg">
-                                        <img href="#" src="assets/comment.svg">
+                                        <a href="#"><img href="#" src="assets/bookmark.svg"></a>
+                                        <a href="#"><img href="#" src="assets/share-ios.svg"></a>
+                                        <a href="#"><img href="#" src="assets/comment.svg"></a>
                                     </div>
-                                </a>
+                                </div>
                                 <a href="#" class="related-article">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur quae voluptatem libero, totam laboriosam hic.</a>
                                 <a href="#" class="related-article">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita ea consequatur quisquam esse deserunt soluta!</a>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!--a row of three smaller articles-->
+                <div class="small-article">
+                    <div class="article">
+                        <!--FIXME class should come before href-->
+                        <a href="#" class="article-thumbnail"><img src="assets/article-image-placeholder.svg"></a>
+                        <a href="#" class="article-topic"><p>Argomento</p></a>
+                        <a href="#" class ="article-title">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, officiis id dolores error omnis nisi aspernatur! Veritatis, quaerat unde.
+                        </a>
+                        <div class="rest-of-article-wrapper">
+                            <div class="rest-of-article-text">
+                                <div class="article-info-wrapper">
+                                    <a class="article-author" href="#"><p>di Nome Cognome</p></a>
+                                    <div class= "info-and-share">
+                                        <a href="#"><img href="#" src="assets/bookmark.svg"></a>
+                                        <a href="#"><img href="#" src="assets/share-ios.svg"></a>
+                                        <a href="#"><img href="#" src="assets/comment.svg"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>       
+                </div>
+
+                <div class="small-article">
+                    <div class="article">
+                        <!--FIXME class should come before href-->
+                        <a href="#" class="article-thumbnail"><img src="assets/article-image-placeholder.svg"></a>
+                        <a href="#" class="article-topic"><p>Argomento</p></a>
+                        <a href="#" class ="article-title">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, officiis id dolores error omnis nisi aspernatur! Veritatis, quaerat unde.
+                        </a>
+                        <div class="rest-of-article-wrapper">
+                            <div class="rest-of-article-text">
+                                <div class="article-info-wrapper">
+                                    <a class="article-author" href="#"><p>di Nome Cognome</p></a>
+                                    <div class= "info-and-share">
+                                        <a href="#"><img href="#" src="assets/bookmark.svg"></a>
+                                        <a href="#"><img href="#" src="assets/share-ios.svg"></a>
+                                        <a href="#"><img href="#" src="assets/comment.svg"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>       
+                </div>
+
+                <div class="small-article">
+                    <!--border to 0px because it's the last article of the row-->
+                    <div class="article" style="border: 0px;">
+                        <!--FIXME class should come before href-->
+                        <a href="#" class="article-thumbnail"><img src="assets/article-image-placeholder.svg"></a>
+                        <a href="#" class="article-topic"><p>Argomento</p></a>
+                        <a href="#" class ="article-title">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, officiis id dolores error omnis nisi aspernatur! Veritatis, quaerat unde.
+                        </a>
+                        <div class="rest-of-article-wrapper">
+                            <div class="rest-of-article-text">
+                                <div class="article-info-wrapper">
+                                    <a class="article-author" href="#"><p>di Nome Cognome</p></a>
+                                    <div class= "info-and-share">
+                                        <a href="#"><img href="#" src="assets/bookmark.svg"></a>
+                                        <a href="#"><img href="#" src="assets/share-ios.svg"></a>
+                                        <a href="#"><img href="#" src="assets/comment.svg"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>       
+                </div>
+
+                <!--another row of three small articles-->
+                <div class="small-article">
+                    <div class="article">
+                        <!--FIXME class should come before href-->
+                        <a href="#" class="article-thumbnail"><img src="assets/article-image-placeholder.svg"></a>
+                        <a href="#" class="article-topic"><p>Argomento</p></a>
+                        <a href="#" class ="article-title">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, officiis id dolores error omnis nisi aspernatur! Veritatis, quaerat unde.
+                        </a>
+                        <div class="rest-of-article-wrapper">
+                            <div class="rest-of-article-text">
+                                <div class="article-info-wrapper">
+                                    <a class="article-author" href="#"><p>di Nome Cognome</p></a>
+                                    <div class= "info-and-share">
+                                        <a href="#"><img href="#" src="assets/bookmark.svg"></a>
+                                        <a href="#"><img href="#" src="assets/share-ios.svg"></a>
+                                        <a href="#"><img href="#" src="assets/comment.svg"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>       
+                </div>
+
+                <div class="small-article">
+                    <div class="article">
+                        <!--FIXME class should come before href-->
+                        <a href="#" class="article-thumbnail"><img src="assets/article-image-placeholder.svg"></a>
+                        <a href="#" class="article-topic"><p>Argomento</p></a>
+                        <a href="#" class ="article-title">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, officiis id dolores error omnis nisi aspernatur! Veritatis, quaerat unde.
+                        </a>
+                        <div class="rest-of-article-wrapper">
+                            <div class="rest-of-article-text">
+                                <div class="article-info-wrapper">
+                                    <a class="article-author" href="#"><p>di Nome Cognome</p></a>
+                                    <div class= "info-and-share">
+                                        <a href="#"><img href="#" src="assets/bookmark.svg"></a>
+                                        <a href="#"><img href="#" src="assets/share-ios.svg"></a>
+                                        <a href="#"><img href="#" src="assets/comment.svg"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>       
+                </div>
+
+                <div class="small-article">
+                    <!--border to 0px because it's the last article of the row-->
+                    <div class="article" style="border: 0px;">
+                        <!--FIXME class should come before href-->
+                        <a href="#" class="article-thumbnail"><img src="assets/article-image-placeholder.svg"></a>
+                        <a href="#" class="article-topic"><p>Argomento</p></a>
+                        <a href="#" class ="article-title">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, officiis id dolores error omnis nisi aspernatur! Veritatis, quaerat unde.
+                        </a>
+                        <div class="rest-of-article-wrapper">
+                            <div class="rest-of-article-text">
+                                <div class="article-info-wrapper">
+                                    <a class="article-author" href="#"><p>di Nome Cognome</p></a>
+                                    <div class= "info-and-share">
+                                        <a href="#"><img href="#" src="assets/bookmark.svg"></a>
+                                        <a href="#"><img href="#" src="assets/share-ios.svg"></a>
+                                        <a href="#"><img href="#" src="assets/comment.svg"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>       
                 </div>
             </div>
         </div>
@@ -235,13 +377,54 @@
                     <li><a class="fq-menu-link">ARGOMENTO 1</a></li>
                 </ul>
             </div>
-            <div id="menu-footer"></div>
+            <div id="menu-footer">
+                <ul id="menu-footer-links">
+                    <li><a href="">HOME</a></li>
+                    <li><a href="#">COMMUNITY</a></li>
+                    <li><a href="#">EBOOK</a></li>
+                    <li><a href="#">SHOP</a></li>
+                    <li><a href="#">ABBONATI ORA</a></li>
+                    <li><a href="#">IL TUO PROFILO</a></li>
+                    <li><a href="#">GERENZA E CONTATTI</a></li>
+                </ul>
+                <ul id="menu-footer-social">
+                    <li><a href="#"><img src="assets/facebook-tag.svg"></a></li>
+                    <li><a href="#"><img src="assets/chat-bubble.svg"></a></li>
+                    <li><a href="#"><img src="assets/instagram.svg"></a></li>
+                    <li><a href="#"><img src="assets/telegram.svg"></a></li>
+                    <li><a href="#"><img src="assets/twitter.svg"></a></li>
+                    <li><a href="#"><img src="assets/youtube.svg"></a></li>
+                </ul>
+                <a id="menu-subscribe-button" href="#">
+                    <h5>ABBONATI</h5>
+                </a>
+            </div>
         </div>
     </main>
 
     <footer>
-        <div class="footer-content">
-            footer
+        <div id="footer-content">
+            <a id="footer-logo" href=""><img src="assets/favicon32.png"></a>
+            <ul id="footer-links">
+                <li><a href="#">PRIVACY</a></li>
+                <li><a href="#">TERMINI E CONDIZIONI D'USO</a></li>
+                <li><a href="#">FAI PUBBLICITA' CON FQ</a></li>
+                <li><a href="#">REDAZIONE</a></li>
+                <li><a href="#">FONDAZIONE FQ</a></li>
+                <li><a href="#">ABBONATI</a></li>
+                <li><a href="#">CAMBIA IMPOSTAZIONI PRIVACY</a></li>
+            </ul>
+            <ul id="footer-social">
+                <li><a href="#"><img src="assets/facebook-tag.svg"></a></li>
+                <li><a href="#"><img src="assets/chat-bubble.svg"></a></li>
+                <li><a href="#"><img src="assets/instagram.svg"></a></li>
+                <li><a href="#"><img src="assets/telegram.svg"></a></li>
+                <li><a href="#"><img src="assets/twitter.svg"></a></li>
+                <li><a href="#"><img src="assets/youtube.svg"></a></li>
+            </ul>
+            <div id="footer-copyright">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
         </div>
     </footer> 
 
