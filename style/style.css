@@ -2,10 +2,12 @@ body {
   display: flex;
   flex-flow: column;
   justify-content: center;
+  flex: 1;
   margin: 0;
   font-weight: 200;
   font-family: "Playfair Display", "Times New Roman";
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .disclaimer {
@@ -18,7 +20,7 @@ body {
   margin: 0px;
   position: sticky;
   top: 0;
-  min-width: 100%;
+  min-width: 100vw;
   height: 20px;
   background-color: black;
   color: white;
@@ -29,9 +31,12 @@ body {
 
 main {
   display: flex;
+  flex: 1;
   justify-content: center;
   min-height: 100vh; /*100vh means 100% of viewport height*/
   background-color: lightgray;
+  width: 100vw;
+  overflow-x: hidden;
   /*FIXME footer-content doesn't align perfectly when the screen is almost shrunk enough to change display none to the ad-columns.
   Actually the problem seems to be that the main column is shrunk when around 820px of page width for some reason*/
 }
@@ -52,6 +57,7 @@ main #main-column header {
   justify-content: space-between;
   top: 30px;
   height: 100px;
+  width: 100%;
   background-color: white;
   color: black;
 }
@@ -198,7 +204,7 @@ main #main-column #main-content #FQExtra #FQExtra-carousel .FQExtra-article {
   display: flex;
   flex-direction: row;
   scroll-snap-align: start;
-  width: 50%;
+  min-width: 50%;
   text-decoration: none;
 }
 main #main-column #main-content #FQExtra #FQExtra-carousel .FQExtra-article .FQExtra-article-text {
@@ -523,10 +529,13 @@ footer #footer-content #footer-copyright p {
 
 @media screen and (max-width: 1150px) {
   main #main-column, main #menu-panel {
+    min-width: 100vw;
+  }
+  main #main-column .article, main #main-column .article-with-video, main #main-column .small-article {
     width: 100%;
   }
   footer #footer-content {
-    width: 100%;
+    min-width: 100vw;
   }
 }
 
