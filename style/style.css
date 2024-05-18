@@ -1,26 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  flex: 1;
   margin: 0;
   font-weight: 200;
   font-family: "Playfair Display", "Times New Roman";
   overflow-y: auto;
-  overflow-x: hidden;
 }
 
 .disclaimer {
   display: flex;
   justify-content: center;
-  flex-grow: 1;
+  flex: 1;
   padding: 0px;
   padding-top: 5px;
   padding-bottom: 5px;
   margin: 0px;
   position: sticky;
   top: 0;
-  min-width: 100vw;
+  max-width: auto;
   height: 20px;
   background-color: black;
   color: white;
@@ -35,17 +34,16 @@ main {
   justify-content: center;
   min-height: 100vh; /*100vh means 100% of viewport height*/
   background-color: lightgray;
-  width: 100vw;
-  overflow-x: hidden;
+  width: 100%;
   /*FIXME footer-content doesn't align perfectly when the screen is almost shrunk enough to change display none to the ad-columns.
   Actually the problem seems to be that the main column is shrunk when around 820px of page width for some reason*/
 }
 main #main-column {
   display: flex;
   flex-direction: column;
-  width: 1050px;
-  margin: 0;
-  border: 0;
+  max-width: 1050px;
+  margin: 0px;
+  border: 0px;
   padding: 15px;
   background-color: white;
   /*TODO this div doesn't display on mobile*/
@@ -57,7 +55,7 @@ main #main-column header {
   justify-content: space-between;
   top: 30px;
   height: 100px;
-  width: 100%;
+  max-width: 100%;
   background-color: white;
   color: black;
 }
@@ -65,7 +63,7 @@ main #main-column header #subscribe-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30%;
+  max-width: 30%;
   font-size: 12px;
 }
 main #main-column header #subscribe-box h3 {
@@ -108,7 +106,7 @@ main #main-column header #navbar {
   justify-content: flex-end;
   list-style-type: none;
   font-size: 12px;
-  width: 30%;
+  max-width: 40%;
   margin: 0px;
   padding: 0px;
 }
@@ -170,7 +168,7 @@ main #main-column #main-content {
   flex-wrap: wrap;
 }
 main #main-column #main-content #FQExtra {
-  width: 100%;
+  max-width: 100%;
 }
 main #main-column #main-content #FQExtra #FQExtra-header {
   display: flex;
@@ -529,13 +527,13 @@ footer #footer-content #footer-copyright p {
 
 @media screen and (max-width: 1150px) {
   main #main-column, main #menu-panel {
-    min-width: 100vw;
+    max-width: 100%;
   }
   main #main-column .article, main #main-column .article-with-video, main #main-column .small-article {
-    width: 100%;
+    max-width: 100%;
   }
   footer #footer-content {
-    min-width: 100vw;
+    max-width: 100%;
   }
 }
 

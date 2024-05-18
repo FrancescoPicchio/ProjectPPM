@@ -4,31 +4,29 @@ $main-content-highlight-color: #8c0404;
 $main-width: 1050px;
 $small-font-size: 12px;
 
+* {
+    box-sizing: border-box;
+}
 
 body {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    flex: 1;
     margin: 0;
     font-weight: 200;
     //Playfair Display will be the main font and Times New Roman is the fallback
     font-family: 'Playfair Display', 'Times New Roman';
     overflow-y: auto;
-    overflow-x: hidden;
 }
 
 .disclaimer {
     display: flex;
     justify-content: center;
-    flex-grow: 1;
+    flex: 1;
     padding: 0px;
     padding-top: 5px;
     padding-bottom: 5px;
     margin: 0px;
     position: sticky;
     top: 0;
-    min-width: 100vw;
+    max-width: auto;
     height: 20px;
     background-color: black;
     color: white;
@@ -44,17 +42,17 @@ main {
     justify-content: center;
     min-height: 100vh; /*100vh means 100% of viewport height*/
     background-color: $ad-coloumn-bg-color;
-    width: 100vw;
-    overflow-x: hidden;
+    width: 100%;
+    //overflow-x: hidden;
 
     /*FIXME footer-content doesn't align perfectly when the screen is almost shrunk enough to change display none to the ad-columns.
     Actually the problem seems to be that the main column is shrunk when around 820px of page width for some reason*/
     #main-column {
         display: flex;
         flex-direction: column;
-        width: $main-width;
-        margin: 0;
-        border: 0;
+        max-width: $main-width;
+        margin: 0px;
+        border: 0px;
         padding: 15px;
         background-color: $background-color;
     
@@ -66,7 +64,7 @@ main {
             //FIXME there is literally one pixel too much when the page scrolls down
             top: 30px;
             height: 100px;
-            width: 100%;
+            max-width: 100%;
             background-color: white;
             color: black;
         
@@ -76,7 +74,7 @@ main {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                width: 30%;
+                max-width: 30%;
                 font-size: 12px;
 
                 h3 {
@@ -126,7 +124,7 @@ main {
                 justify-content: flex-end;
                 list-style-type: none;
                 font-size: 12px;
-                width: 30%;
+                max-width: 40%;
                 margin: 0px;
                 padding: 0px;
 
@@ -207,7 +205,7 @@ main {
 
 
             #FQExtra{
-                width: 100%;
+                max-width: 100%;
 
                 #FQExtra-header {
                     display: flex;
@@ -646,18 +644,18 @@ footer {
 @media screen and (max-width: 1150px) {
     main {
         #main-column, #menu-panel {
-            min-width: 100vw;
+            max-width: 100%;
         }
 
         #main-column {
             .article, .article-with-video, .small-article {
-                width: 100%;
+                max-width: 100%;
             }
         }
     }
     footer{
         #footer-content{
-            min-width: 100vw;
+            max-width: 100%;
         }
     }
 }
