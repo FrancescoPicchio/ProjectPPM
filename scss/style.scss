@@ -156,32 +156,43 @@ main {
             padding: 5px;
             margin: 0px;
 
-                .daily-topics>ul, ul {
-                    display: flex;
-                    flex-flow: row;
-                    align-items: center;
-                    justify-content: space-around;
-                    list-style-type: none;
+            .daily-topics {
+                display: flex;
+                flex-flow: row;
+                overflow-x: scroll;
+                //hides the scrollbar for edge, firefox and ie
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+                
+            }
 
-                    li {
-                        margin: 5px;
-                        
-                        a {
-                            color: black;
-                            text-decoration: none;
-                        }
+            .daily-topics::-webkit-scrollbar {
+                 display: none; 
+            }
 
-                        a:hover {
-                            text-decoration: underline;
-                        }
+            .daily-topics>ul, ul {
+                display: flex;
+                flex-flow: row;
+                align-items: center;
+                justify-content: space-around;
+                list-style-type: none;
+
+                li {
+                    margin: 5px;
+                    
+                    a {
+                        color: black;
+                        text-decoration: none;
+                    }
+
+                    a:hover {
+                        text-decoration: underline;
                     }
                 }
+            }
         }
 
-        .daily-topics {
-            display: flex;
-            flex-flow: row;
-        }
+        
 
         #main-content {
             display: flex;
@@ -221,12 +232,15 @@ main {
                     flex-direction: row;
                     background-color: #413d3b;
                     overflow-x: scroll;
-                    //FIXME either add arrows or 
+                    scroll-snap-type: x mandatory;
+                    scroll-padding: 50px;
 
                     .FQExtra-article {
+                        //articles overlap when shrinking to small widths
                         display: flex;
                         flex-direction: row;
-                        min-width: 50%;
+                        scroll-snap-align: start;
+                        width: 50%;
                         text-decoration: none;
                         
                         .FQExtra-article-text {
@@ -474,16 +488,20 @@ main {
         }
 
         #menu-footer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
 
             #menu-footer-links {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
+                width: 100%;
                 list-style-type: none;
                 border-bottom: 1.5px lightgray;
                 border-bottom-style: solid;
                 margin: 0px;
-                padding: 15px;
+                padding: 15px 2px;
     
                 li {
                     a {
@@ -505,18 +523,34 @@ main {
                 justify-content: flex-start;
                 list-style-type: none;
                 margin: 0px;
-                padding: 15px;
-                width: 50%;
+                padding: 15px 0px;
+                width: 70%;
     
                 li {
                     a {
                         text-decoration: none;
-                        padding: 15px;
+                        padding: 0px 30px 0px 0px;
                         img {
                             //filter is used to change the color of the svg image
                             filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(317deg) brightness(105%) contrast(104%);
                         }
                     }
+                }
+            }
+
+            #menu-subscribe-button {
+                display:flex;
+                align-items: center;
+                justify-content: flex-end;
+                //pushes the div to the right
+                margin-left: auto;
+                text-decoration: none;
+                font-family: Arial, Helvetica, sans-serif;
+
+                h5 {
+                    color: white;
+                    margin: 0px;
+
                 }
             }
         }
@@ -603,15 +637,15 @@ footer {
 }
 
 //IMPORTANT! Make media quearies with as nested as the rest of the scss code or else it won't have enough priority to apply the proper properties
-@media (max-width: 1150px) {
+@media screen and (max-width: 1150px) {
     main {
         #main-column, #menu-panel {
-            max-width: 100%;
+            width: 100%;
         }
     }
     footer{
         #footer-content{
-            max-width: 100%;
+            width: 100%;
         }
     }
 }
