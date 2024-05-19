@@ -34,8 +34,6 @@ main {
   min-height: 100vh; /*100vh means 100% of viewport height*/
   background-color: lightgray;
   width: 100%;
-  /*FIXME footer-content doesn't align perfectly when the screen is almost shrunk enough to change display none to the ad-columns.
-  Actually the problem seems to be that the main column is shrunk when around 820px of page width for some reason*/
 }
 main #main-column {
   display: flex;
@@ -392,10 +390,13 @@ main #menu-panel #menu-header {
 }
 main #menu-panel #menu-header #close-menu-icon {
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(317deg) brightness(105%) contrast(104%);
-  padding: 10px;
+  padding: 20px 0px;
 }
 main #menu-panel #menu-header #close-menu-icon:hover {
   cursor: pointer;
+}
+main #menu-panel #menu-header #menu-search-icon {
+  display: none;
 }
 main #menu-panel #home-link-menu {
   text-decoration: none;
@@ -415,6 +416,7 @@ main #menu-panel #menu-panel-col-wrapper .menu-panel-col li {
   padding: 15px 0px;
 }
 main #menu-panel #menu-panel-col-wrapper .menu-panel-col li a {
+  padding: 0px;
   text-decoration: none;
   color: white;
 }
@@ -559,10 +561,13 @@ footer #footer-content #footer-copyright p {
     max-width: 100%;
   }
   footer #footer-content {
-    max-width: 100%;
+    width: 100%;
   }
 }
 @media (max-width: 750px) {
+  .disclaimer {
+    font-size: 12px;
+  }
   main #main-column, main #menu-panel {
     max-width: 100%;
   }
@@ -570,11 +575,17 @@ footer #footer-content #footer-copyright p {
     max-height: 80px;
     flex-direction: row-reverse;
   }
+  main #main-column header #subscribe-box {
+    align-items: center;
+  }
   main #main-column header #subscribe-box h3 {
     display: none;
   }
   main #main-column header #subscribe-box p {
     display: none;
+  }
+  main #main-column header #navbar {
+    align-items: center;
   }
   main #main-column header #navbar li {
     display: none;
@@ -600,7 +611,7 @@ footer #footer-content #footer-copyright p {
   main #main-column #home-before-content .daily-topics .item-daily-topics li {
     margin: 0px;
     margin-right: 15px;
-    min-width: 25%;
+    min-width: 20%;
   }
   main #main-column #home-before-content .social-links {
     justify-content: flex-start;
@@ -635,12 +646,74 @@ footer #footer-content #footer-copyright p {
   }
   main #main-column #main-content .article .rest-of-article-wrapper .rest-of-article-text {
     width: 100%;
+    padding: 0px;
   }
   main #main-column #main-content .small-article .article {
     align-items: flex-start;
   }
   main #main-column #main-content .small-article .rest-of-article-wrapper {
     width: 100%;
+  }
+  main #menu-panel #menu-header {
+    justify-content: space-between;
+  }
+  main #menu-panel #menu-header #menu-search-icon {
+    display: block;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(317deg) brightness(105%) contrast(104%);
+  }
+  main #menu-panel #menu-header #menu-search-icon:hover {
+    cursor: pointer;
+  }
+  main #menu-panel #home-link-menu {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    border-bottom: 1.5px white;
+    border-bottom-style: solid;
+  }
+  main #menu-panel #menu-panel-col-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  main #menu-panel #menu-panel-col-wrapper .menu-panel-col {
+    width: 100%;
+    margin: 0px;
+  }
+  main #menu-panel #menu-panel-col-wrapper .menu-panel-col li {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 1.5px white;
+    border-bottom-style: solid;
+  }
+  main #menu-panel #menu-panel-col-wrapper .menu-panel-col li:has(> .menu-topic) {
+    display: none;
+  }
+  main #menu-panel #menu-footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  main #menu-panel #menu-footer #menu-footer-links {
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+    border-bottom-style: hidden;
+    overflow-y: scroll;
+    /*would have hidden the scrollbar for aesthetic purposes, but without it it doesn't look scrollable
+    -ms-overflow-style: none;
+    scrollbar-width: none;*/
+  }
+  main #menu-panel #menu-footer #menu-footer-links li {
+    padding: 10px;
+    padding-bottom: 0px;
+  }
+  main #menu-panel #menu-footer #menu-footer-social {
+    display: none;
+  }
+  main #menu-panel #menu-footer #menu-subscribe-button {
+    margin: 0px;
+    padding: 10px;
   }
   footer #footer-content {
     max-width: 100%;

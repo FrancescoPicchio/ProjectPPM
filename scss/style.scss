@@ -43,10 +43,8 @@ main {
     min-height: 100vh; /*100vh means 100% of viewport height*/
     background-color: $ad-coloumn-bg-color;
     width: 100%;
-    //overflow-x: hidden;
 
-    /*FIXME footer-content doesn't align perfectly when the screen is almost shrunk enough to change display none to the ad-columns.
-    Actually the problem seems to be that the main column is shrunk when around 820px of page width for some reason*/
+
     #main-column {
         display: flex;
         flex-direction: column;
@@ -478,11 +476,16 @@ main {
             #close-menu-icon {
                 //filter is used to change the color of the svg image
                 filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(317deg) brightness(105%) contrast(104%);
-                padding: 10px;
+                padding: 20px 0px;
             }
 
             #close-menu-icon:hover {
                 cursor: pointer;
+            }
+
+            #menu-search-icon {
+                //search icon only shows up for small width devices
+                display: none;
             }
         }
         #home-link-menu {
@@ -503,6 +506,7 @@ main {
                     padding: 15px 0px;
 
                     a {
+                        padding: 0px;
                         text-decoration: none;
                         color: white;
                     }
@@ -675,7 +679,6 @@ footer {
 @media (max-width: 1150px) {
     main {
         //FIXME suscribe box overflows when under 900px of width more or less
-        //FIXME menu doesn't handle shrinking gracefully
         #main-column, #menu-panel {
             max-width: 100%;
             flex-direction: column;
@@ -689,7 +692,7 @@ footer {
     }
     footer{
         #footer-content{
-            max-width: 100%;
+            width: 100%;
         }
     }
 }
@@ -697,6 +700,7 @@ footer {
 //IMPORTANT! Make media quearies with as nested as the rest of the scss code or else it won't have enough priority to apply the proper properties
 @media (max-width: 750px) {
     //FIXME make disclaimer readable.
+    .disclaimer{font-size: 12px;}
     main {
         #main-column, #menu-panel {
             max-width: 100%;
@@ -704,14 +708,17 @@ footer {
 
         #main-column {
             header {
+                //add an account icon
                 max-height: 80px;
                 flex-direction: row-reverse;
                 #subscribe-box {
                     h3 {display: none;}
                     p {display:none;}
+                    align-items: center;
                 }
 
                 #navbar {
+                    align-items: center;
                     li {
                         display: none;
                     }
@@ -739,7 +746,7 @@ footer {
                         li {
                             margin: 0px;
                             margin-right: 15px;
-                            min-width: 25%;
+                            min-width: 20%;
                         }
                     }
                 }
@@ -780,9 +787,9 @@ footer {
                     .rest-of-article-wrapper {
                         flex-direction: column;
                         .article-thumbnail {width: 100%;}
-
                         .rest-of-article-text {
                             width: 100%;
+                            padding: 0px;
                         }
                     }
                 }
@@ -790,6 +797,76 @@ footer {
                 .small-article {
                     .article{align-items: flex-start;}
                     .rest-of-article-wrapper {width: 100%;}
+                }
+            }
+        }
+
+        #menu-panel {
+            //TODO add another menu for sezione and an arrow, also add a search icon
+            //make font bigger
+            #menu-header {
+                justify-content: space-between;
+
+                #menu-search-icon {
+                    display: block;
+                    //filter is used to change the color of the svg image
+                    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(317deg) brightness(105%) contrast(104%);
+                }
+                #menu-search-icon:hover {
+                    cursor: pointer;
+                }
+            }
+
+            #home-link-menu{
+                display: flex;
+                justify-content: center;
+                padding-bottom: 20px;
+                border-bottom: 1.5px white;
+                border-bottom-style: solid;
+            }
+
+            #menu-panel-col-wrapper {
+                flex-direction: column;
+                align-items: center;
+                .menu-panel-col {
+                    width: 100%;
+                    margin: 0px;
+                    li{
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+                        padding-bottom: 20px;
+                        border-bottom: 1.5px white;
+                        border-bottom-style: solid;
+                    }
+                    li:has(> .menu-topic){
+                        display: none;
+                    }
+                }
+            }
+
+            #menu-footer {
+                flex-direction: column;
+                align-items: center;
+
+                #menu-footer-links {
+                    flex-direction: column;
+                    align-items: center;
+                    height: 50%;
+                    border-bottom-style: hidden;
+                    overflow-y: scroll;
+                    /*would have hidden the scrollbar for aesthetic purposes, but without it it doesn't look scrollable
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;*/
+                    li {
+                        padding: 10px;
+                        padding-bottom: 0px;
+                    }
+                }
+                #menu-footer-social {display: none;}
+                #menu-subscribe-button{
+                    margin: 0px;
+                    padding: 10px;
                 }
             }
         }
