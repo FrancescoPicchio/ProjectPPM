@@ -169,10 +169,6 @@ main {
                 display: flex;
                 flex: 1;
                 flex-flow: row;
-                overflow-x: scroll;
-                //hides the scrollbar for edge, firefox and ie
-                -ms-overflow-style: none;
-                scrollbar-width: none;
                 max-width: 80%;
 
                 h6 {
@@ -182,6 +178,10 @@ main {
                 .item-daily-topics {
                     flex: 1;
                     font-family: 'Roboto';
+                    overflow-x: scroll;
+                    //hides the scrollbar for edge, firefox and ie
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
                 }
             }
 
@@ -493,7 +493,7 @@ main {
         #menu-panel-col-wrapper {
             display: flex;
             flex-direction: row;
-            column-gap: 100px;
+            column-gap: 15%;
 
             .menu-panel-col {
                 list-style-type: none;
@@ -582,6 +582,7 @@ main {
                 font-family: Arial, Helvetica, sans-serif;
 
                 h5 {
+                    font-size: 14px;
                     color: white;
                     margin: 0px;
 
@@ -674,6 +675,7 @@ footer {
 @media (max-width: 1150px) {
     main {
         //FIXME suscribe box overflows when under 900px of width more or less
+        //FIXME menu doesn't handle shrinking gracefully
         #main-column, #menu-panel {
             max-width: 100%;
             flex-direction: column;
@@ -694,6 +696,7 @@ footer {
 
 //IMPORTANT! Make media quearies with as nested as the rest of the scss code or else it won't have enough priority to apply the proper properties
 @media (max-width: 750px) {
+    //FIXME make disclaimer readable.
     main {
         #main-column, #menu-panel {
             max-width: 100%;
@@ -728,12 +731,15 @@ footer {
                 
                 .daily-topics {
                     flex-direction: column;
+                    max-width: 100%;
                     .item-daily-topics {
                         justify-content: flex-start;
                         padding: 0px;
+                        width: 100%;
                         li {
                             margin: 0px;
                             margin-right: 15px;
+                            min-width: 25%;
                         }
                     }
                 }
@@ -751,6 +757,15 @@ footer {
             #main-content{
                 flex-direction: column;
 
+                #FQExtra {
+                    #FQExtra-carousel {
+                        .FQExtra-article {
+                            min-width: 100%;
+                            padding: 0px 15px;
+                        }
+                    }
+                }
+                //FIXME make titles font not too big
                 .article, .article-with-video, .small-article {
                     width: 100%;
                 }
@@ -779,6 +794,8 @@ footer {
             }
         }
     }
+
+    
     footer{
         #footer-content{
             max-width: 100%;
