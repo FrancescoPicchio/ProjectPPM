@@ -1,9 +1,9 @@
-//checks if the window size is less than 750px, to avoid it conflicting with the corresponding media queary for that size
-
-if(window.innerWidth > 750){
-  // When the user scrolls down 50px from the top of the document, resize the header's font size
-  window.onscroll = function() {scrollFunction()};
-  function scrollFunction() {
+// When the user scrolls down 50px from the top of the document, resize the header's font size
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  //checks to see if the condition doesn't match the media queary, if it does it doesn't execute the function
+  const mediaQuery = window.matchMedia('(max-width: 750px)');
+  if (!mediaQuery.matches) {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
       document.querySelector("header").style.maxHeight = "80px";
       //adjusting the subscribe-box div

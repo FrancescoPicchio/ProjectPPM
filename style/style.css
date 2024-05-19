@@ -56,6 +56,9 @@ main #main-column header {
   background-color: white;
   color: black;
 }
+main #main-column header #account-button {
+  display: none;
+}
 main #main-column header #subscribe-box {
   display: flex;
   flex-direction: column;
@@ -572,17 +575,22 @@ footer #footer-content #footer-copyright p {
     max-width: 100%;
   }
   main #main-column header {
-    max-height: 80px;
+    max-height: 80px !important;
     flex-direction: row-reverse;
+  }
+  main #main-column header #account-button {
+    display: block;
+    padding: 20px;
+    padding-right: 0px;
   }
   main #main-column header #subscribe-box {
     align-items: center;
   }
   main #main-column header #subscribe-box h3 {
-    display: none;
+    display: none !important;
   }
   main #main-column header #subscribe-box p {
-    display: none;
+    display: none !important;
   }
   main #main-column header #navbar {
     align-items: center;
@@ -624,6 +632,9 @@ footer #footer-content #footer-copyright p {
   main #main-column #main-content {
     flex-direction: column;
   }
+  main #main-column #main-content #FQExtra #FQExtra-header h4 span {
+    display: none;
+  }
   main #main-column #main-content #FQExtra #FQExtra-carousel .FQExtra-article {
     min-width: 100%;
     padding: 0px 15px;
@@ -638,6 +649,9 @@ footer #footer-content #footer-copyright p {
     border-bottom-style: solid;
     border-right-style: hidden;
   }
+  main #main-column #main-content .article .article-title {
+    font-size: 24px;
+  }
   main #main-column #main-content .article .rest-of-article-wrapper {
     flex-direction: column;
   }
@@ -647,6 +661,12 @@ footer #footer-content #footer-copyright p {
   main #main-column #main-content .article .rest-of-article-wrapper .rest-of-article-text {
     width: 100%;
     padding: 0px;
+  }
+  main #main-column #main-content .article-with-video {
+    margin: 0px;
+  }
+  main #main-column #main-content .fullrow-article .article .article-title {
+    font-size: 28px;
   }
   main #main-column #main-content .small-article .article {
     align-items: flex-start;
@@ -670,6 +690,7 @@ footer #footer-content #footer-copyright p {
     padding-bottom: 20px;
     border-bottom: 1.5px white;
     border-bottom-style: solid;
+    font-size: 20px;
   }
   main #menu-panel #menu-panel-col-wrapper {
     flex-direction: column;
@@ -686,6 +707,7 @@ footer #footer-content #footer-copyright p {
     padding-bottom: 20px;
     border-bottom: 1.5px white;
     border-bottom-style: solid;
+    font-size: 20px;
   }
   main #menu-panel #menu-panel-col-wrapper .menu-panel-col li:has(> .menu-topic) {
     display: none;
@@ -708,12 +730,18 @@ footer #footer-content #footer-copyright p {
     padding: 10px;
     padding-bottom: 0px;
   }
+  main #menu-panel #menu-footer #menu-footer-links li a {
+    font-size: 18px;
+  }
   main #menu-panel #menu-footer #menu-footer-social {
     display: none;
   }
   main #menu-panel #menu-footer #menu-subscribe-button {
     margin: 0px;
     padding: 10px;
+  }
+  main #menu-panel #menu-footer #menu-subscribe-button h5 {
+    font-size: 20px;
   }
   footer #footer-content {
     max-width: 100%;

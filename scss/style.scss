@@ -66,7 +66,7 @@ main {
             background-color: white;
             color: black;
         
-            
+            #account-button {display: none;}
 
             #subscribe-box {
                 display: flex;
@@ -708,12 +708,20 @@ footer {
 
         #main-column {
             header {
-                //add an account icon
-                max-height: 80px;
+                //added !important to avoid creating conflicts with headerShrink.js
+                max-height: 80px !important;
                 flex-direction: row-reverse;
+                
+                #account-button {
+                    display: block;
+                    padding: 20px;
+                    padding-right: 0px;
+                }
+
                 #subscribe-box {
-                    h3 {display: none;}
-                    p {display:none;}
+                    //added !important to avoid creating conflicts with headerShrink.js
+                    h3 {display: none !important;}
+                    p {display:none !important;}
                     align-items: center;
                 }
 
@@ -765,6 +773,11 @@ footer {
                 flex-direction: column;
 
                 #FQExtra {
+                    #FQExtra-header {
+                        h4{
+                            span {display:none;}
+                        }
+                    }
                     #FQExtra-carousel {
                         .FQExtra-article {
                             min-width: 100%;
@@ -772,7 +785,6 @@ footer {
                         }
                     }
                 }
-                //FIXME make titles font not too big
                 .article, .article-with-video, .small-article {
                     width: 100%;
                 }
@@ -784,12 +796,26 @@ footer {
                     border-bottom-style: solid;
                     border-right-style: hidden;
 
+                    .article-title {
+                        font-size: 24px;
+                    }
+
                     .rest-of-article-wrapper {
                         flex-direction: column;
                         .article-thumbnail {width: 100%;}
                         .rest-of-article-text {
                             width: 100%;
                             padding: 0px;
+                        }
+                    }
+                }
+
+                .article-with-video {margin: 0px;}
+
+                .fullrow-article {
+                    .article {
+                        .article-title {
+                            font-size: 28px;
                         }
                     }
                 }
@@ -823,6 +849,7 @@ footer {
                 padding-bottom: 20px;
                 border-bottom: 1.5px white;
                 border-bottom-style: solid;
+                font-size: 20px;
             }
 
             #menu-panel-col-wrapper {
@@ -838,6 +865,7 @@ footer {
                         padding-bottom: 20px;
                         border-bottom: 1.5px white;
                         border-bottom-style: solid;
+                        font-size: 20px;
                     }
                     li:has(> .menu-topic){
                         display: none;
@@ -861,12 +889,16 @@ footer {
                     li {
                         padding: 10px;
                         padding-bottom: 0px;
+                        a {
+                            font-size: 18px;
+                        }
                     }
                 }
                 #menu-footer-social {display: none;}
                 #menu-subscribe-button{
                     margin: 0px;
                     padding: 10px;
+                    h5 {font-size: 20px;}
                 }
             }
         }
