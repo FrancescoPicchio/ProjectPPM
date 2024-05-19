@@ -135,9 +135,12 @@ main {
                             text-decoration: none;
                             color: gray;
                     }
-                        #open-menu-button:hover {
-                            cursor: pointer;
-                        }
+                }
+
+                #open-menu-button {
+                    img:hover {
+                        cursor: pointer;
+                    }
                 }
             }
         }
@@ -147,6 +150,7 @@ main {
             display: flex;
             flex-flow: row;
             justify-content: space-between;
+            width: 100%;
 
             h6 {
                 margin: 0px;
@@ -278,6 +282,10 @@ main {
                 }
             }
             .article {
+                display: flex;
+                align-items: normal;
+                flex-direction: column;
+                flex: 1;
                 width: 65%;
                 height: auto;
                 border-right: 2px #f2f2f2;
@@ -663,10 +671,12 @@ footer {
 }
 
 //IMPORTANT! Make media quearies with as nested as the rest of the scss code or else it won't have enough priority to apply the proper properties
-@media screen and (max-width: 1150px) {
+@media (max-width: 1150px) {
     main {
+        //FIXME suscribe box overflows when under 900px of width more or less
         #main-column, #menu-panel {
             max-width: 100%;
+            flex-direction: column;
         }
 
         #main-column {
@@ -678,6 +688,106 @@ footer {
     footer{
         #footer-content{
             max-width: 100%;
+        }
+    }
+}
+
+//IMPORTANT! Make media quearies with as nested as the rest of the scss code or else it won't have enough priority to apply the proper properties
+@media (max-width: 750px) {
+    main {
+        #main-column, #menu-panel {
+            max-width: 100%;
+        }
+
+        #main-column {
+            header {
+                max-height: 80px;
+                flex-direction: row-reverse;
+                #subscribe-box {
+                    h3 {display: none;}
+                    p {display:none;}
+                }
+
+                #navbar {
+                    li {
+                        display: none;
+                    }
+                    #open-menu-button {
+                        display: block;
+                    }
+                }
+
+            }
+
+            #header-director-and-update {
+                display: none;
+            }
+
+            #home-before-content {
+                flex-direction: column;
+                
+                .daily-topics {
+                    flex-direction: column;
+                    .item-daily-topics {
+                        justify-content: flex-start;
+                        padding: 0px;
+                        li {
+                            margin: 0px;
+                            margin-right: 15px;
+                        }
+                    }
+                }
+
+                .social-links {
+                    justify-content: flex-start;
+                    padding: 0px;
+                    li {
+                        margin-right: 0px;
+                        padding-right: 20px;
+                    }
+                }
+            }
+
+            #main-content{
+                flex-direction: column;
+
+                .article, .article-with-video, .small-article {
+                    width: 100%;
+                }
+
+                .article {
+                    flex-direction: column;
+                    align-items: center;
+                    border-bottom: 1.5px lightgray;
+                    border-bottom-style: solid;
+                    border-right-style: hidden;
+
+                    .rest-of-article-wrapper {
+                        flex-direction: column;
+                        .article-thumbnail {width: 100%;}
+
+                        .rest-of-article-text {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .small-article {
+                    .article{align-items: flex-start;}
+                    .rest-of-article-wrapper {width: 100%;}
+                }
+            }
+        }
+    }
+    footer{
+        #footer-content{
+            max-width: 100%;
+            #footer-links {
+                flex-direction: column;
+                align-items: center;
+                padding: 0px 15px;
+                li {padding: 10px;}
+            }
         }
     }
 }
