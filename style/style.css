@@ -651,6 +651,10 @@ footer #footer-content #footer-copyright p {
   main #main-column #main-content #FQExtra #FQExtra-carousel .FQExtra-article .FQExtra-article-text {
     padding: 0px 30px;
   }
+  main #main-column #main-content #FQExtra #FQExtra-carousel .FQExtra-article img {
+    object-fit: contain;
+    max-width: 100%;
+  }
   main #main-column #main-content .article, main #main-column #main-content .article-with-video, main #main-column #main-content .small-article {
     width: 100%;
   }

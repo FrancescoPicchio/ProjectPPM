@@ -794,6 +794,10 @@ footer {
                             min-width: 100%;
                             padding: 0px 15px;
                             .FQExtra-article-text {padding: 0px 30px;}
+                            img {
+                                object-fit: contain;
+                            max-width: 100%;
+                            }
                         }
                     }
                 }
